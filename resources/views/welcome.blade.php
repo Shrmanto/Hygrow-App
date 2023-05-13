@@ -34,32 +34,49 @@
 
         <!-- bg tulisan-->
     <style>
-        .backgroundGambar{
-            background: url("{{asset('landing/images/img0.png')}}");
-            width: 100%;
-            height: 650px;
-            background-size: cover;
-            -webkit-background-size: cover;
-            -o-background-size: cover;
-            -ms-background-size: cover;
-            -moz-background-size: cover;
+        /* Container holding the image and the text */
+            .container1 {
             position: relative;
-	        height: 678px;
-        }
-        .tempatText{
+            text-align: center;
+            color: white;
+            font-size: 150%;
+            padding-top: 4.5rem;
+            padding-bottom: 2.5rem;
+            }
+
+        /* Centered text */
+            .centered {
             position: absolute;
-            width: 100%;
-            padding: 40px;
-            background-color: rgba(52, 73, 94,0.5);
-            color: #ffff;
-            font-size: 35px;
-            display: none;
-        }
+            font-size: 150%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            }
+
+            *{padding:0;margin:0;}
+
+            .float{
+                position:fixed;
+                width:60px;
+                height:60px;
+                bottom:40px;
+                right:40px;
+                background-color:#0C9;
+                color:#FFF;
+                border-radius:50px;
+                text-align:center;
+                box-shadow: 2px 2px 3px #999;
+            }
+
+            .my-float{
+                margin-top:22px;
+            }
+
     </style>
     </head>
     <body>
     
-        <main>
+        <main style=" overflow-x: hidden;">
             <!-- ======= Header Video ======= -->
             <section class="hero" id="hero">
                 <div class="heroText">
@@ -102,7 +119,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">About</a>
+                                <a class="nav-link" href="/about">About</a>
                             </li>
 
                             <li class="nav-item">
@@ -121,8 +138,7 @@
                      <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{route('login')}}">Sign In</a></li>
                         <li><a class="dropdown-item" href="{{route('register')}}">Sign Up</a></li>
-                        <div class="dropdown-divider"></div>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <!--<div class="dropdown-divider"></div>-->
                      </ul>
                     </div>
                      </ul>
@@ -143,25 +159,25 @@
             <section class="section-padding pb-0" id="about">
                 <div class="row content">
                     <div class="col-md-5" data-aos="fade-up">
-                        <img src="{{asset('landing/images/collab.png')}}" class="img-fluid" alt="" width="350px">
+                        <img src="{{asset('landing/images/collab2.png')}}" class="img-fluid" alt="" width="550px">
                     </div>
 
                     <div class="col" data-aos="fade-up">
-                        <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>-->
                         <blockquote class="blockquote">
-                            <p>
+                            <font size="3">
                             Hygrow merupakan sebuah sistem berbasis website yang akan membantu para pelaku usaha di bidang pertanian hidroponik. 
                             Sistem ini diciptakan guna menjawab kebutuhan dari pelaku usaha hidroponik, kebutuhan tersebut yaitu sebuah sistem yang
                             mana membantu para petani hidroponik untuk mencari investor untuk mengembangkan pertanian hidroponik, selain untuk
                             mencari investor sistem ini juga menyediakan kebutuhan petani hidroponik meliputi bibit, sistem pertanian hidroponik,
                             dan juga nutrisi untuk tanaman hidroponik. 
-                            </p>
-                            <p>
+                            </font><br>
+                            <br>
+                            <font size="3">
                             Alasan dari pembuatan sistem ini sendiri dikarenakan kurangnya informasi terkait bagaimana cara mengembangkan pertanian hidroponik,
                             berapa modal yang diperlukan, dan bagaimana cara merawat tanaman tanaman hidroponik sehingga memiliki nilai jual yang tinggi.
                             Penerapan sistem ini diharapkan dapat memenuhi kebutuhan pasar terkait hasil pertanian hidroponik yang akhir akhir ini sangat diminati
-                            di pasaran dan untuk mempersiapkan dengan petani petani konvensional untuk bersiap bertanam menggunakan hidroponik.
-                            </p>
+                            di pasaran dan untuk mempersiapkan dengan petani petani konvensional untuk bersiap bertanam menggunakan hidroponik. 
+                            </font><br>
                         </blockquote>
                     </div>
                 </div>
@@ -171,8 +187,8 @@
             <section id="get-started" class="padd-section text-center">
                 <div class="container" data-aos="fade-up">
                     <div class="section-title text-center">
-                        <h2>simple systeme fordiscount </h2>
-                        <p class="separator">Integer cursus bibendum augue ac cursus .</p>
+                        <h2><br></h2>
+                        <!--<p class="separator">Integer cursus bibendum augue ac cursus .</p>-->
 
                     </div>
                 </div>
@@ -180,113 +196,46 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="feature-block">
+                                    <img src="{{asset('landing2/assets/img/online-shop.png')}}" alt="img">
+                                    <h4>HyGMart</h4>
+                                    <p>Menyediakan kebutuhan hidroponik anda</p>
+                                    <a href="#">selengkapnya</a>
+                                </div>
+                            </div>
+                        <div class="col-md-10 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
                             <div class="feature-block">
-                                <img src="{{asset('landing2/assets/img/online-shop.png')}}" alt="img">
-                                <h4>HyGMart</h4>
-                                <p>Menyediakan kebutuhan hidroponik anda</p>
-                                <a href="#">selengkapnya</a>
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="feature-block">
-                                <img src="{{asset('landing2/assets/img/investment.png')}}" alt="img">
-                                <h4>HyGrovest</h4>
-                                <p>Untuk anda yang ingin berinvestasi hidroponik</p>
-                                <a href="#">selengkapnya</a>
+                                    <img src="{{asset('landing2/assets/img/investment.png')}}" alt="img">
+                                    <h4>HyGrovest</h4>
+                                    <p>Untuk anda yang ingin berinvestasi hidroponik</p>
+                                    <a href="#">selengkapnya</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- bg tulis-->
-            <section class="section-padding" id="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="background">
-                                <div class="backgroundGambar d-flex">
-                                    <div class="tempatText text-center align-self-center">Gambar Pemandangan</div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- bg tulis
+            <section>
+                <div class="container1">
+                    <img src="{{asset('landing/images/img0.png')}}" alt="Snow" style="width:100%;">
+                    <div class="centered">
+                        <blockquote class="blockquote">
+                            <font size="3"> Why Join with Us?</font>
+                        <br>
+                        <p style>Kami adalah tim yang berpengalaman dan terampil dalam mengelola bisnis pertanian hidroponik, dan kami akan memberikan dukungan dan bimbingan dalam mengelola peternakan hidroponik Anda.</p>
                     </div>
                 </div>
-            <script>
-            $(document).ready(function(){
-                $(".backgroundGambar").hover(function(){
-                    $(".tempatText").slideToggle("slow")
-                })
-            })
-            </script>
+            </section>-->
+            <section>
+            <div class="container1">
+                    <img src="{{asset('landing/images/why.png')}}" alt="Snow" style="width:100%;">
+            </div>
             </section>
-            <section class="section-padding" id="portfolio">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-12">
-                            <h2 class="mb-5 text-center" data-aos="fade-up">Portfolio</h2>
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="portfolio-thumb mb-5" data-aos="fade-up">
-                                <a href="{{asset('landing/images/portfolio/visuals-Y4qzW3AsvqI-unsplash.jpeg')}}" class="image-popup">
-                                    <img src="{{asset('landing/images/portfolio/visuals-Y4qzW3AsvqI-unsplash.jpeg')}}" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">                     
-                                    <h4 class="portfolio-title mb-0">Effortless</h4>
-
-                                    <p class="text-danger">Branding</p>
-                                </div>
-                            </div> 
-
-                            <div class="portfolio-thumb" data-aos="fade-up">
-                                <a href="{{asset('landing/images/portfolio/severin-candrian-nn3uIZqmUtE-unsplash.jpeg')}}" class="image-popup">
-                                    <img src="{{asset('landing/images/portfolio/severin-candrian-nn3uIZqmUtE-unsplash.jpeg')}}" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">                     
-                                    <h4 class="portfolio-title mb-0">Health technology</h4>
-
-                                    <p class="text-success">Art Direction</p>
-                                </div>
-                            </div> 
-                        </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
-                                <a href="{{asset('landing/images/portfolio/tyler-nix-Y1drF0Y3Oe0-unsplash.jpeg')}}" class="image-popup">
-                                    <img src="{{asset('landing/images/portfolio/tyler-nix-Y1drF0Y3Oe0-unsplash.jpeg')}}" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">                     
-                                    <h4 class="portfolio-title mb-0">Maki</h4>
-
-                                    <p class="text-warning">Website</p>
-                                </div>
-                            </div> 
-
-                            <div class="portfolio-thumb" data-aos="fade-up">
-                                <a href="{{asset('landing/images/portfolio/thought-catalog-gv-T-OjLe4c-unsplash.jpeg')}}" class="image-popup">
-                                    <img src="{{asset('landing/images/portfolio/thought-catalog-gv-T-OjLe4c-unsplash.jpeg')}}" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">                     
-                                    <h4 class="portfolio-title mb-0">The gig economy</h4>
-
-                                    <p class="text-info">Graphic</p>
-                                </div>
-                            </div> 
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            <section class="news section-padding" id="news">
+            <!-- End Bg Tulis-->
+            <!-- Artikel Info-->
+           <!-- <section class="news section-padding" id="news">
                 <div class="container">
                     <div class="row">
 
@@ -365,9 +314,9 @@
 
                     </div>
                 </div>
-            </section>
+            </section>-->
 
-            <section class=" contact section-padding" id="contact">
+            <!--<section class=" contact section-padding" id="contact">
                 <div class="container">
                     <div class="row">
                         
@@ -375,8 +324,8 @@
 
                             <h2 class="mb-4 text-center" data-aos="fade-up">Dont' be shy, write to us</h2>
 
-                            <form action="#" method="post" class="contact-form" role="form" data-aos="fade-up">
-
+                            <form action="tambahData" method="post" class="contact-form" role="form" data-aos="fade-up">
+                            {{ csrf_field() }} {{ method_field('POST') }}
                                 <div class="row">
                                     
                                     <div class="col-lg-6 col-6">
@@ -395,38 +344,7 @@
                                         <label for="message" class="form-label">How can we help?</label>
 
                                         <textarea name="message" rows="6" class="form-control" id="message" placeholder="Tell us about the project" required></textarea>
-                                        
                                     </div>
-
-                                    <div class="col-12">
-                                        <label for="services" class="form-label">Services<sup class="text-danger">*</sup></label>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input">
-
-                                            <label class="form-check-label" for="checkbox1">Branding</label>
-                                          </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12 my-2 my-lg-0">
-                                        <div class="form-check">
-                                            <input type="checkbox" id="checkbox2" name="checkbox2" class="form-check-input">
-
-                                            <label class="form-check-label" for="checkbox2">Digital Experiences</label>
-                                          </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" class="form-check-input">
-
-                                            <label class="form-check-label" for="checkbox3">Web Development</label>
-                                          </div>
-                                    </div>
-                                </div>
-
                                 <div class="col-lg-5 col-12 mx-auto mt-5">
                                     <button type="submit" class="form-control">Send Message</button>
                                 </div>
@@ -435,10 +353,18 @@
 
                     </div>
                 </div>
+            </section>-->
+            <section id="about" class="section-padding pb-0">
+                    <div class="container" data-aos="fade-up">
+                        <header class="section-header">
+                        <h2 style="text-align:center;"><img src="{{asset('landing/images/Logo.png')}}" alt="" width="250px" style="float:center;" />Contact</h2>
+                            <!--<h2 class="text-center">About</h2>
+                            <img src="{{asset('landing/images/Logo.png')}}" class="img-fluid" alt="" width="300px">-->
+                        </header><br><br>
+                    </div>
             </section>
-
             <section class="google-map">
-                <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" class="map-iframe" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15797.457822174392!2d113.7168742!3d-8.1659876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6943505e30a6d%3A0x4a4df80f122d472f!2sFakultas%20Ilmu%20Komputer%20Universitas%20Jember!5e0!3m2!1sid!2sid!4v1682857793467!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
 
         </main>
@@ -450,32 +376,37 @@
                     <div class="col-12">
                         <h5 class="text-white">
                             <i class="bi-geo-alt-fill me-2"></i>
-                            State of Rio de Janeiro, Brazil
+                            Jember, Jawa Timur
+                            <br>Indonesia
                         </h5>
 
                         <a href="mailto:info@company.com" class="custom-link mt-3 mb-5">
-                            info@company.com
+                            hygrow@gmail.com
                         </a>
                     </div>
 
                     <div class="col-6">
-                        <p class="copyright-text mb-0">Copyright © Nomad Force 2021 
-                        
-                        <br><br>Design: <a href="https://templatemo.com/page/1" target="_parent">TemplateMo</a></p>
-                    
+                        <p class="copyright-text mb-0">Copyright © Hygrow 2023 </p>
                     </div>
 
-                    <div class="col-lg-3 col-5 ms-auto">
+                    <div class="col-lg-2 col-5 ms-auto">
                         <ul class="social-icon">
-                            <li><a href="#" class="social-icon-link bi-facebook"></a></li>
+                            <li><a href="https://www.facebook.com/login.php" class="social-icon-link bi-facebook"></a></li>
 
-                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+                            <li><a href="https://web.whatsapp.com" class="social-icon-link bi-whatsapp"></a></li>
 
-                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+                            <li><a href="https://www.instagram.com/?hl=en" class="social-icon-link bi-instagram"></a></li>
                         </ul>
                     </div>
 
                 </div>
+            </section>
+             <!-- button konsul
+             <section>
+                Code begins here
+                <a href="https://wa.me/6282555832517" class="float">
+                <i class="social-icon-link bi-whatsapp"></i>
+                </a>-->
             </section>
         </footer>
 
@@ -495,5 +426,30 @@
 
         <!-- Template Main JS File -->
         <script src="{{asset('landing2/assets/js/main.js')}}"></script> 
+
+        <!-- ADUAN CUST--> 
+        <script type="text/javascript">
+        var table, save_method;
+        $(function(){
+            $('form').on('submit', function(e){
+                    if(!e.isDefaultPrevented()){
+                        var id = $('#id').val();
+                        var url = "{{ route('admin.store') }}";
+                        $.ajax({
+                            url : url,
+                            type : "POST",
+                            data : $('form').serialize(),
+                            success : function(data){
+                                table.ajax.reload();
+                            },
+                            error : function(){
+                                alert("Tidak dapat menyimpan data!");
+                            }
+                        });
+                        return false;
+                    }
+                });
+        });
+    </script>
     </body>
 </html>

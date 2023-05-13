@@ -25,7 +25,7 @@
     <div class="wrapper vh-100">
       <div class="row align-items-center h-100">
         <form method="POST" action="{{ route('login') }}" class="col-lg-3 col-md-4 col-10 mx-auto text-center">
-        @csrf
+        @csrf 
                         
                     </a>
           <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="#">
@@ -49,7 +49,6 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
-            </div>
             </div>
           <div class="form-group">
 

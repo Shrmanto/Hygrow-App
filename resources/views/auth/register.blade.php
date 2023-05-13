@@ -22,7 +22,8 @@
   <body class="light ">
     <div class="wrapper vh-100">
       <div class="row align-items-center h-100">
-        <form method="POST" action="{{ route('register') }}" class="col-lg-6 col-md-8 col-10 mx-auto">
+        <form method="POST" action="{{ url('/register-user') }}" class="col-lg-6 col-md-8 col-10 mx-auto">
+          @csrf
           <div class="mx-auto text-center my-4">
             <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
             <img src="{{asset('sign/assets/Logo.png')}}" alt="" height="80" width="175">
@@ -37,22 +38,41 @@
           </div>
           <div class="form-group">
             <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input type="email" class="form-control" id="inputEmail4" name="email" value="{{old('email')}}">
+            @error('email')
+            {{$message}}
+            @enderror
           </div>
           <div class="form-row">
             <div class="form-group col">
               <label for="firstname">Name</label>
-              <input type="text" id="firstname" class="form-control">
+              <input type="text" id="firstname" class="form-control" name="name" value="{{old('name')}}">
+              @error('name')
+              {{$message}}
+              @enderror
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="address">Address</label>
-              <input type="text" id="address" class="form-control">
+              <input type="text" id="address" class="form-control" name="address" value="{{old('address')}}">
+              @error('address')
+              {{$message}}
+              @enderror
             </div>
             <div class="form-group col-md-6">
               <label for="phoneNumber">Phone Number</label>
-              <input type="text" id="phoneNumber" class="form-control">
+              <input type="text" id="phoneNumber" class="form-control" name="phone_number" value="{{old('phone_number')}}">
+              @error('phone_number')
+              {{$message}}
+              @enderror
+            </div>
+            <div class="form-group col-md-6">
+              <label for="date_of_birth">Date of Birth</label>
+              <input type="date" id="date_of_birth" class="form-control" name="date_of_birth" value="{{old('date_of_birth')}}">
+              @error('date_of_birth')
+              {{$message}}
+              @enderror
             </div>
           </div>
           <hr class="my-4">
@@ -60,11 +80,17 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="inputPassword5">New Password</label>
-                <input type="password" class="form-control" id="inputPassword5">
+                <input type="password" class="form-control" id="inputPassword5" name="password">
+                @error('password')
+                {{$message}}
+                @enderror
               </div>
               <div class="form-group">
                 <label for="inputPassword6">Confirm Password</label>
-                <input type="password" class="form-control" id="inputPassword6">
+                <input type="password" class="form-control" id="inputPassword6" name="confirm">
+                @error('pconfirm')
+                {{$message}}
+                @enderror
               </div>
             </div>
             <div class="col-md-6">

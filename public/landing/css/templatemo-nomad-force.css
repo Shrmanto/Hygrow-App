@@ -566,8 +566,6 @@ strong {
 .contact-form button[type='submit'] {
   background: var(--dark-color);
   border: none;
-  border-radius: 100px;
-  color: var(--white-color);
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   padding: 16px;
@@ -592,7 +590,8 @@ strong {
   SITE FOOTER               
 -----------------------------------------*/
 .site-footer {
-  background: var(--dark-color);
+  background: #198754;
+  /*background-image: url("../images/foot.jpg");*/
   padding-top: 4.5rem;
   padding-bottom: 2.5rem;
 }
@@ -602,10 +601,10 @@ strong {
   font-size: var(--p-font-size);
 }
 
-.site-footer .custom-link:hover,
+/*.site-footer .custom-link:hover,
 .site-footer .social-icon-link:hover {
   color: var(--white-color);
-}
+}*/
 
 .copyright-text {
   color: rgba(255, 255, 255, 0.45);
@@ -627,8 +626,8 @@ strong {
 }
 
 .social-icon-link {
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 2rem;
   display: inline-block;
   vertical-align: top;
   margin-top: 4px;

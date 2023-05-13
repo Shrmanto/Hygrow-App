@@ -12,13 +12,13 @@ class RedirectController extends Controller
 
     public function redirect(){
         $roleuser = \Auth::user()->roles()->pluck('name')[0];
-
+        /*dd($roleuser);*/
         if($roleuser == 'admin'){
-            return view('home');
+            return redirect('/adminmain');
         }elseif($roleuser == 'mitra'){
-            return view('home');
+            return redirect('/mitramain');
         }elseif($roleuser == 'customer'){
-            return view('home');
+            return redirect('/custmain');
         }else{
             return redirect('/logout');
         }
