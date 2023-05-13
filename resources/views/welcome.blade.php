@@ -127,7 +127,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#news">Invest</a>
+                                <a class="nav-link" href="#news">HyGrovest</a>
                             </li>
                         </ul>
                     </div>
@@ -364,7 +364,7 @@
                     </div>
             </section>
             <section class="google-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15797.457822174392!2d113.7168742!3d-8.1659876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6943505e30a6d%3A0x4a4df80f122d472f!2sFakultas%20Ilmu%20Komputer%20Universitas%20Jember!5e0!3m2!1sid!2sid!4v1682857793467!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15797.457822174392!2d113.7168742!3d-8.1659876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6943505e30a6d%3A0x4a4df80f122d472f!2sFakultas%20Ilmu%20Komputer%20Universitas%20Jember!5e0!3m2!1sid!2sid!4v1682857793467!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
 
         </main>
