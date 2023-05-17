@@ -126,7 +126,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#news">Invest</a>
+                                <a class="nav-link" href="#news">HyGrovest</a>
                             </li>
                         </ul>
                     </div>
