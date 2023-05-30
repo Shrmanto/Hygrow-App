@@ -31,6 +31,12 @@ Route::post('/partners', [App\Http\Controllers\MitraController::class, 'store'])
 Route::resource('/partners', App\Http\Controllers\MitraController::class);
 Route::get('/customer/data', [App\Http\Controllers\CustomerController::class, 'dataCust'])->name('customer.data');
 Route::resource('/customer', App\Http\Controllers\CustomerController::class);
+Route::get('/product/data', [App\Http\Controllers\ProductController::class, 'dataProductMitra'])->name('product.data');
+Route::post('/product/send', [App\Http\Controllers\ProductController::class, 'store']);
+Route::resource('/product', App\Http\Controllers\ProductController::class);
+Route::get('/investation/data', [App\Http\Controllers\InvestController::class, 'dataInvestCust'])->name('investasi.data');
+Route::post('/investation/send', [App\Http\Controllers\InvestController::class, 'store']);
+Route::resource('/investation', App\Http\Controllers\InvestController::class);
 Route::get('/complaint/data', [App\Http\Controllers\ComplaintsController::class, 'dataComplaint'])->name('complaint.data');
 Route::post('/complaint/send', [App\Http\Controllers\ComplaintsController::class, 'store']);
 Route::resource('/complaint', App\Http\Controllers\ComplaintsController::class);

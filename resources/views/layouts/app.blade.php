@@ -114,7 +114,7 @@
               </a>
             </li>
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+              <a class="nav-link" href="{{route('product.index')}}">
                 <i class="fe fe-shopping-cart fe-16"></i>
                 <span class="ml-3 item-text">e-Commerce</span>
               </a>
@@ -126,7 +126,7 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">Invest Product</span></a>
+                  <a class="nav-link pl-3" href="{{route('investation.index')}}"><span class="ml-1 item-text">Invest Product</span></a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Customer Invest</span></a>

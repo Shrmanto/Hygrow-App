@@ -105,13 +105,14 @@
                 <span class="ml-3 item-text">Recap</span>
               </a>
             </li>
-            <li class="nav-item w-100">
+            <!-- <li class="nav-item w-100">
               <a class="nav-link" href="{{route('complaint.index')}}">
                 <i class="fe fe-message-square fe-16"></i>
                 <span class="ml-3 item-text">Orders</span>
               </a>
-            </li>
-            <!--<li class="nav-item dropdown">
+            </li> -->
+            
+            <li class="nav-item dropdown">
               <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-trending-up fe-16"></i>
                 <span class="ml-3 item-text">Investation</span>
@@ -122,7 +123,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">...</span></a>
-                </li>-->
+                </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text">...s</span></a>
             </li>

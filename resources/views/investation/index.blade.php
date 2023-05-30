@@ -13,10 +13,12 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Name Product</th>
+                            <th>Name Investation</th>
                             <th>Price</th>
-                            <th>Description</th>
-                            <th>Customer/Mitra</th>                           
+                            <th>Profit</th>
+                            <th>Contract</th>
+                            <th>Description</th>                           
+                            <!-- <th>Customer/Mitra</th>                            -->
                           </tr>
                         </thead>
                         <tbody></tbody>
@@ -37,15 +39,15 @@
                 'scrollY'     : true,
                 'autoWidth'   : true,
                 "ajax" : {
-                "url" : "{{ route('product.data') }}",
+                "url" : "{{ route('investasi.data') }}",
                 "type" : "GET"
                     }
             });
             $('#modal-form form').on('submit', function(e){
                 if(!e.isDefaultPrevented()){
                     var id = $('#id').val();
-                    if(save_method == "add") url = "{{ route('product.store') }}";
-                    else url = "products/"+id;
+                    if(save_method == "add") url = "{{ route('investation.store') }}";
+                    else url = "investations/"+id;
                     $.ajax({
                         url : url,
                         type : "POST",
