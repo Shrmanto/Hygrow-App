@@ -115,7 +115,7 @@
                     <div id="navbarNav" class="collapse navbar-collapse" >
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/home">Home</a>
+                                <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
 
                             <li class="nav-item">
@@ -127,7 +127,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#news">Invest</a>
+                                <a class="nav-link" href="#news">HyGrovest</a>
                             </li>
                         </ul>
                     </div>

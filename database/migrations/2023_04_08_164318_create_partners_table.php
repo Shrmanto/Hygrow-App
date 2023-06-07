@@ -17,11 +17,10 @@ class CreatePartnersTable extends Migration
             $table->increments('id');
             $table->string('code_partners');
             $table->text('address');
-            $table->string('phone_number');
-            $table->integer('user_id', false, true);
+            $table->string('phone_number', 13);
+            $table->unsignedInteger('user_id'); // foreign key
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->casecadeOnUpdate()->casecadeOnDelete();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); // foreign key
         });
     }
 

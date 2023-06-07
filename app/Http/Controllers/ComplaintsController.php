@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Complaint;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\DataTables;
 
 class ComplaintsController extends Controller
@@ -37,12 +38,10 @@ class ComplaintsController extends Controller
      */
     public function store(Request $request)
     {
-        $complaint = new Complaint; 
+        $complaint = new Complaint;
         $complaint->user_id = auth()->user()->id;
-        $complaint->isi = $request->message;
+        $complaint->isi = $request->isi;
         $complaint->save();
-
-        return redirect('/redirect');
     }
 
     /**
@@ -95,24 +94,25 @@ class ComplaintsController extends Controller
         $complaint->delete();
     }
 
-    public function dataComplaint(){
-        $complaint = \DB::table('complaints')
-                        ->select('users.id', 'users.name', 'users.email', 'complaints.isi')
-                        ->join('users', 'complaints.user_id', 'users.id')
-                        ->get();
+    public function dataComplaint()
+    {
+        $complaint = DB::table('complaints')
+            ->select('users.id', 'users.name', 'users.email', 'complaints.isi')
+            ->join('users', 'complaints.user_id', 'users.id')
+            ->get();
         $no = 0;
         $data = array();
-        foreach($complaint as $list){
+        foreach ($complaint as $list) {
             $no++;
             $row = array();
             $row[] = $no;
             $row[] = $list->name;
             $row[] = $list->email;
             $row[] = $list->isi;
-            $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id.')"><i class="fa fa-trash"></i></a>'; 
+            // $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData(' . $list->id . ')"><i class="fa fa-trash"></i></a>';
             '';
-           
-            $data[]= $row; 
+
+            $data[] = $row;
         }
         $output = array("data" => $data);
         return response()->json($output);

@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Products;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -14,7 +18,6 @@ class ProductController extends Controller
     public function index()
     {
         return view('product.index');
-        
     }
 
     /**
@@ -35,10 +38,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Products; 
-        $product->name = $request->name;
+        $product = new Products;
         $product->product_name = $request->product_name;
+        $product->images = $request->images;
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+        $image_path = $request->file('image')->store('image', 'public');
+
+        $data = Image::create([
+            'image' => $image_path,
+        ]);
         $product->price = $request->price;
+        $product->stock = $request->stock;
         $product->description = $request->description;
         $product->customer_partner_id = $request->customer_partner_id;
         $product->save();
@@ -75,12 +87,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $admin = User::find($id);
-        $admin->name = $request->name;
-        $admin->email = $request->email;
-        $admin->password = bcrypt($request->password);
-        $admin->update_at = now();
-        $admin->update();
+        $product = Products::find($id);
+        $product->product_name = $request->product_name;
+        $product->images = $request->images;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+        $product->description = $request->description;
+        $product->update_at = now();
+        $product->update();
     }
 
     /**
@@ -91,7 +105,31 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $admin = User::find($id);
-        $admin->delete();
+        $product = Products::find($id);
+        $product->delete();
+    }
+
+    public function dataProduct(){
+        $product = \DB::table('products')
+                        ->select('products.product_name', 'products.images', 'products.price', 'products.stock', 'products.description', 'users.name')
+                        ->join('users', 'products.customer_partner_id', 'users.id')
+                        ->get();
+        $no = 0;
+        $data = array();
+        foreach($product as $list){
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $list->product_name;
+            $row[] = $list->images;
+            $row[] = $list->price;
+            $row[] = $list->stock;
+            $row[] = $list->description; 
+            '';
+            $data[]= $row; 
+        }
+        $output = array("data" => $data);
+        return response()->json($output);
+
     }
 }

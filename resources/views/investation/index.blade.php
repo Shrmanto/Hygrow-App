@@ -18,7 +18,6 @@
                             <th>Profit</th>
                             <th>Contract</th>
                             <th>Description</th>                           
-                            <!-- <th>Customer/Mitra</th>                            -->
                           </tr>
                         </thead>
                         <tbody></tbody>

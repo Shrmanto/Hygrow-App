@@ -1,22 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\Investations;
+use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
 class InvestController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-        return view('investation.index');
+        return view('invest.index');
+        
     }
 
     /**
@@ -37,16 +36,22 @@ class InvestController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $investation = new User; 
-        // $partner->user_id = $user->id;
-        $investation->name_invest = $request->name_invest;
-        $investation->price = $request->price;
-        $investation->profit = $request->profit;
-        $investation->contract = $request->contract;
-        $investation->description = $request->description;
-        // $investation->customer_partner_id = $request->customer_partner_id;
-        $investation->save();
+        $invest = new Investations;
+        $invest->invest_name = $request->invest_name;
+        $invest->images = $request->images;
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+        $image_path = $request->file('image')->store('image', 'public');
+
+        $data = Image::create([
+            'image' => $image_path,
+        ]);
+        $invest->price = $request->price;
+        $invest->stock = $request->stock;
+        $invest->description = $request->description;
+        $invest->customer_partner_id = $request->customer_partner_id;
+        $invest->save();
     }
 
     /**
@@ -68,7 +73,7 @@ class InvestController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -80,7 +85,14 @@ class InvestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $invest = Investations::find($id);
+        $invest->invest_name = $request->invest_name;
+        $invest->images = $request->images;
+        $invest->price = $request->price;
+        $invest->stock = $request->stock;
+        $invest->description = $request->description;
+        $invest->update_at = now();
+        $invest->update();
     }
 
     /**
@@ -91,32 +103,31 @@ class InvestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $invest = Investations::find($id);
+        $invest->delete();
     }
 
-    public function dataInvestCust(){
-        $investation = \DB::table('investations')
-                        ->select('investations.invest_name', 'investations.price', 'investations.profit', 'investations.contract', 'investations.description')
-                        // ->join('users', 'investations.user_id', 'users.id')
+    public function dataInvest(){
+        $invest = \DB::table('investations')
+                        ->select('investations.invest_name', 'investations.images', 'investations.price', 'investations.stock', 'investations.description', 'users.id', 'users.name')
+                        ->join('users', 'investations.customer_partner_id', 'users.id')
                         ->get();
         $no = 0;
         $data = array();
-        foreach($investation as $list){
+        foreach($invest as $list){
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $list->name_invest;
+            $row[] = $list->invest_name;
+            $row[] = $list->images;
             $row[] = $list->price;
-            $row[] = $list->profit;
-            $row[] = $list->contract;
-            $row[] = $list->description;
-            // $row[] = $list->customer_partner_id;
-            $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id.')"><i class="fa fa-trash"></i></a>'; 
+            $row[] = $list->stock;
+            $row[] = $list->description; 
             '';
-           
             $data[]= $row; 
         }
         $output = array("data" => $data);
         return response()->json($output);
+
     }
 }

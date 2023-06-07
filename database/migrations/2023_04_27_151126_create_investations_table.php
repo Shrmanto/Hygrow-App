@@ -17,6 +17,7 @@ class CreateInvestationsTable extends Migration
             $table->increments('id');
             $table->string('code_invest');
             $table->string('invest_name');
+            $table->string('images');
             $table->integer('price');
             $table->string('profit');
             $table->string('contract');

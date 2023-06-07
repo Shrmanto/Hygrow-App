@@ -21,8 +21,11 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/css/app-light.css')}}" id="lightTheme">
     <link rel="stylesheet" href="{{asset('dashboard/css/app-dark.css')}}" id="darkTheme" disabled>
+    <!-- css -->
+    <link href="{{asset('dashboard/assets/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   </head>
 
+  <!-- nav bar (top) -->
   <body class="vertical  light  ">
     <div class="wrapper">
       <nav class="topnav navbar navbar-light">
@@ -40,8 +43,7 @@
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{ route('user.index') }}">Profile</a>
-              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="{{ route('user2.index') }}">Profile</a><!--belum route admin.profile-->
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
@@ -59,11 +61,13 @@
           <i class="fe fe-x"><span class="sr-only"></span></i>
         </a>
         <nav class="vertnav navbar navbar-light">
-          <!-- nav bar -->
+          
+          <!-- side bar -->
           <div class="w-100 mb-4 d-flex">
             <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
-              <!-- <svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve"> -->
+              <!--<svg version="1.1" id="logo" class="navbar-brand-img brand-sm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">-->
               <img src="{{asset('dashboard/assets/images/Logo.png')}}" class="navbar-brand-img alt="" height="50" width="150">
+            </a>
                 <g>
                   <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
                   <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
@@ -80,54 +84,38 @@
               </a>
             </li>
             <p class="text-muted nav-heading mt-4 mb-1">
-              <span>Data</span>
+              <span>Users</span>
             </p>
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+              <a class="nav-link" href="{{route('productm.index')}}">
                 <i class="fe fe-user fe-16"></i>
                 <span class="ml-3 item-text">Product</span>
               </a>
             </li>
             </li>
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+              <a class="nav-link" href="{{route('investm.index')}}">
                 <i class="fe fe-users fe-16"></i>
-                <span class="ml-3 item-text">Investation</span>
+                <span class="ml-3 item-text">Invest</span>
               </a>
             </li>
-            <p class="text-muted nav-heading mt-4 mb-1">
-              <span>Details</span>
-            </p>
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+              <a class="nav-link" href="{{route('customer.index')}}">
                 <i class="fe fe-star fe-16"></i>
                 <span class="ml-3 item-text">Recap</span>
               </a>
             </li>
-            <!-- <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+            <p class="text-muted nav-heading mt-4 mb-1">
+              <span>Others</span>
+            </p>
+            <li class="nav-item w-100">
+              <a class="nav-link" href="{{route('complaint.index')}}">
                 <i class="fe fe-message-square fe-16"></i>
-                <span class="ml-3 item-text">Orders</span>
+                <span class="ml-3 item-text">Order</span>
               </a>
-            </li> -->
-            <li class="nav-item dropdown">
-              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
-                <i class="fe fe-message-square fe-16"></i>
-                <span class="ml-3 item-text">Orders</span>
-              </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="tables">
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_basic.html"><span class="ml-1 item-text">Invest Order</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Product Order</span></a>
-                </li>
-                <!-- <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_datatables.html"><span class="ml-1 item-text"></span></a> -->
             </li>
-          </ul>
-        </nav>
-      </aside>
+            </nav>
+          </aside>
       <main role="main" class="main-content">
         <div class="container-fluid">
           <div class="row justify-content-center">
@@ -149,6 +137,7 @@
     <script src="{{asset('dashboard/js/config.js')}}"></script>
     <script src="{{asset('dashboard/js/apps.js')}}"></script>
     <script src="{{asset('dashboard/js/jquery.dataTables.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{asset('dashboard/js/dataTables.bootstrap4.min.js')}}></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>

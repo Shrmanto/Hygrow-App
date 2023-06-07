@@ -17,7 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('code_product');
             $table->string('product_name');
+            $table->string('images');
             $table->integer('price');
+            $table->integer('stock');
             $table->text('description');
             $table->integer('customer_partner_id', false, true);
             $table->timestamps();

@@ -21,6 +21,8 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/css/app-light.css')}}" id="lightTheme">
     <link rel="stylesheet" href="{{asset('dashboard/css/app-dark.css')}}" id="darkTheme" disabled>
+    <!-- css -->
+    <link href="{{asset('dashboard/assets/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   </head>
 
   <!-- nav bar (top) -->
@@ -42,7 +44,6 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="{{ route('user.index') }}">Profile</a><!--belum route admin.profile-->
-              <a class="dropdown-item" href="#">Settings</a>
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
@@ -77,7 +78,7 @@
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+              <a class="nav-link" href="{{route('Admhome')}}">
                 <i class="fe fe-home fe-16"></i>
                 <span class="ml-3 item-text">Dashboard</span>
               </a>
@@ -113,12 +114,21 @@
                 <span class="ml-3 item-text">Complaint</span>
               </a>
             </li>
-            <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('product.index')}}">
-                <i class="fe fe-shopping-cart fe-16"></i>
+            <li class="nav-item dropdown">
+              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+                <i class="fe fe-trending-up fe-16"></i>
                 <span class="ml-3 item-text">e-Commerce</span>
               </a>
-            </li>
+              <ul class="collapse list-unstyled pl-4 w-100" id="tables">
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="{{route('product.index')}}">
+                  <span class="ml-1 item-text">Product</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Customer Orders</span></a>
+                </li>
+              </ul>
             <li class="nav-item dropdown">
               <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-trending-up fe-16"></i>
@@ -126,7 +136,9 @@
               </a>
               <ul class="collapse list-unstyled pl-4 w-100" id="tables">
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="{{route('investation.index')}}"><span class="ml-1 item-text">Invest Product</span></a>
+                  <a class="nav-link pl-3" href="{{route('invest.index')}}">
+                  <span class="ml-1 item-text">Invest Product</span>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Customer Invest</span></a>

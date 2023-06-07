@@ -4,7 +4,7 @@
             <form method="POST" class="form-horizontal" data-toggle="validator">
                 {{ csrf_field() }} {{ method_field('POST') }}
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel1"> Edit Profile</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -13,7 +13,7 @@
                     <input type="hidden" id="id" name="id"/>
                     <div class="row g-2">
                         <div class="col mb-3">
-                            <label for="name" class="form-label">Nama</label>
+                            <label for="name" class="form-label">Name</label>
                             <input type="text" id="name" name="name" class="form-control" required />
                         </div>
                         <div class="col mb-3">
@@ -23,13 +23,13 @@
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="old_password" class="form-label">Password Lama</label>
+                            <label for="old_password" class="form-label">Old Password</label>
                             <input type="password" id="old_password" name="old_password" class="form-control" autofocus />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col mb-3">
-                            <label for="password" class="form-label">Password Baru</label>
+                            <label for="password" class="form-label">New Password</label>
                             <input type="password" id="password" name="password" class="form-control" />
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
                             Close
                         </button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Save Change</button>
                     </div>
                 </div>
             </form>

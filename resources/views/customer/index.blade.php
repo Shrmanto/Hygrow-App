@@ -2,7 +2,6 @@
 
 @section('content')
         <div class="col-md-12">
-            <button type="button" onclick="addForm()" class="btn mb-2 btn-outline-success"><span class="fe fe-upload-cloud fe-16"></span></button>
         </div>        
             <!-- Small table -->
                 <div class="col-md-12">
@@ -17,7 +16,6 @@
                             <th>Email</th>
                             <th>Address</th>
                             <th>Phone Number</th>
-                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody></tbody>

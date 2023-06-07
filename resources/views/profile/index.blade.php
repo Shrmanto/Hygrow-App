@@ -2,7 +2,7 @@
     @section('content')
         <div class="row">
             <div class="col-lg-12 mb-3">
-                <a href="javascript:void(0)" class="btn btn-warning" onclick="editProfile()"><i class="fas fa-pencil-alt"></i> Ubah Data</a>
+                <a href="javascript:void(0)" class="btn btn-warning" onclick="editProfile()"><i class="fas fa-pencil-alt"></i> Ubah Profil</a>
             </div>
         </div>
         <div class="row">
@@ -47,7 +47,7 @@
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Berhasil',
-                                    text: 'Berhasil update profile!',
+                                    text: 'Profile berhasil di edit!',
                                 })
                                 Swal.fire({
                                     title: 'Berhasil',
@@ -73,7 +73,7 @@
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Error',
-                                text: 'terjadi Kesalahan dalam update profile!',
+                                text: 'Terjadi kesalahan dalam update profile!',
                             })
                         }
                     });

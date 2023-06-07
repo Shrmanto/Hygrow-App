@@ -6,8 +6,6 @@ use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Spatie\Permission\Traits\HasRoles;
-use Yajra\DataTables\DataTables;
 
 class MitraController extends Controller
 {
@@ -48,10 +46,10 @@ class MitraController extends Controller
         
         if($user->save()){
             $partner = new Partners;
+            $partner->code_partners = random_int(100, 9999);
             $partner->user_id = $user->id;
             $partner->address = $request->address;
             $partner->phone_number = $request->phone_number;
-            $partner->code_partners = random_int(100, 9999);
             $partner->save();
         }
     }
@@ -75,8 +73,6 @@ class MitraController extends Controller
      */
     public function edit($id)
     {
-        $partner = Partner::find($id);
-        echo json_encode($partner);
     }
 
     /**
@@ -99,9 +95,9 @@ class MitraController extends Controller
      */
     public function destroy($id)
     {
-        $partner = Partner::find($id);
-        $partner->delete();
-        return back(); //coba mas apip
+        //delete from table users
+        $user = User::find($id);
+        $user->delete();        
     }
 
     public function dataPartner(){
@@ -119,25 +115,10 @@ class MitraController extends Controller
             $row[] = $list->email;
             $row[] = $list->address;
             $row[] = $list->phone_number;
-            $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id.')"><i class="fa fa-trash"></i></a>';
-            //$row[] = '<form action="'
+            // $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id.')"><i class="far fa-trash-alt" style="color: #ffffff;"></i></a>';
             $data[]= $row;
-        
-        /*$data = array();
-        foreach($partner as $list){
-            $no++;
-            $row = array();
-            $row[] = $no;
-            $row[] = $list->name;
-            $row[] = $list->email;
-            $row[] = $list->address;
-            $row[] = $list->phone_number;
-            $row[] =  '<form action="{{url(hapusBarang'.$list->id.')}}" method="post" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>';
-            //$row[] = '<form action="'
-            $data[]= $row;*/
         }
         $output = array("data" => $data);
         return response()->json($output);
-
     }
 }

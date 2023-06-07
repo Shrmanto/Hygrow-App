@@ -11,4 +11,10 @@ class Partners extends Model
     use HasFactory, HasRoles;
     protected $table = 'partners';
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'code_partners',
+        'address',
+        'phone_number',
+        'user_id',
+    ];
 }
