@@ -1,9 +1,9 @@
 @component('mitraMain.landing')
 
 @section('content')
-        <!-- <div class="col-md-12">
+        <div class="col-md-12">
             <button type="button" onclick="addForm()" class="btn mb-2 btn-outline-success"><span class="fe fe-upload-cloud fe-16"></span></button>
-        </div>         -->
+        </div>        
             <!-- Small table -->
                 <div class="col-md-12">
                   <div class="card shadow">
@@ -13,11 +13,11 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Name Investation</th>
-                            <th>Price</th>
+                            <th>Investation Name</th>
                             <th>Images</th>
+                            <th>Price</th>
                             <th>Profit</th>
-                            <th>Stock</th>
+                            <th>Contract</th>
                             <th>Description</th>
                             <th>Edit</th>
                             <th>Delete</th>

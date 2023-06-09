@@ -14,8 +14,8 @@
                           <tr>
                             <th>No</th>
                             <th>Product Name</th>
-                            <th>Price</th>
                             <th>Images</th>
+                            <th>Price</th>
                             <th>Stock</th>
                             <th>Description</th>
                             <th>Edit</th>

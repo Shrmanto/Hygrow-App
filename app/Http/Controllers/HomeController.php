@@ -25,6 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function indexx()
+    {
+        return view('mitraMain.home');
+    }
+
     public function index1()
     {
         return view('welcome');

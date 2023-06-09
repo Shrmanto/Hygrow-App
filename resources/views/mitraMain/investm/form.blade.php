@@ -19,6 +19,12 @@
             </div> 
             <div class="row">
                         <div class="col mb-3">
+                            <label for="email" class="form-label">Images</label>
+                            <input type="text" id="image" name="image" class="form-control" required />
+                        </div>
+                    </div>
+            <div class="row">
+                        <div class="col mb-3">
                             <label for="email" class="form-label">Price</label>
                             <input type="number" id="price" name="price" class="form-control" required />
                         </div>

@@ -13,6 +13,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/redirect', [App\Http\Controllers\RedirectController::class, 'redirect']);
 Route::get('/Admhome', [App\Http\Controllers\HomeController::class, 'index'])->name('Admhome');
+Route::get('/Mitrhome', [App\Http\Controllers\HomeController::class, 'indexx'])->name('Mitrhome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index1'])->name('home');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/Custhome', [App\Http\Controllers\HomeController::class, 'index2'])->name('Custhome');

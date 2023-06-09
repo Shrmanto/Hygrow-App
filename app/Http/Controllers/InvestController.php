@@ -47,8 +47,9 @@ class InvestController extends Controller
         $data = Image::create([
             'image' => $image_path,
         ]);
+        $invest->profit = $request->profit;
         $invest->price = $request->price;
-        $invest->stock = $request->stock;
+        $invest->contract = $request->contract;
         $invest->description = $request->description;
         $invest->customer_partner_id = $request->customer_partner_id;
         $invest->save();
@@ -89,7 +90,8 @@ class InvestController extends Controller
         $invest->invest_name = $request->invest_name;
         $invest->images = $request->images;
         $invest->price = $request->price;
-        $invest->stock = $request->stock;
+        $invest->profit = $request->profit;
+        $invest->contract = $request->contract;
         $invest->description = $request->description;
         $invest->update_at = now();
         $invest->update();
@@ -109,7 +111,7 @@ class InvestController extends Controller
 
     public function dataInvest(){
         $invest = \DB::table('investations')
-                        ->select('investations.invest_name', 'investations.images', 'investations.price', 'investations.stock', 'investations.description', 'users.id', 'users.name')
+                        ->select('investations.id', 'investations.invest_name', 'investations.images', 'investations.price', 'investations.profit', 'investations.contract', 'investations.description')
                         ->join('users', 'investations.customer_partner_id', 'users.id')
                         ->get();
         $no = 0;
@@ -121,7 +123,9 @@ class InvestController extends Controller
             $row[] = $list->invest_name;
             $row[] = $list->images;
             $row[] = $list->price;
-            $row[] = $list->stock;
+            $row[] = $list->profit;
+            $row[] = $list->contract;
+            $row[] = $list->contract;
             $row[] = $list->description; 
             '';
             $data[]= $row; 

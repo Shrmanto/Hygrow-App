@@ -14,7 +14,7 @@ class InvestmController extends Controller
      */
     public function index()
     {
-        return view('invest.index'); 
+        return view('mitraMain.investm.index'); 
     }
 
     /**
@@ -46,7 +46,9 @@ class InvestmController extends Controller
             $data = Image::create([
                 'image' => $image_path,
             ]);
+            $invest->profit = $request->profit;
             $invest->price = $request->price;
+            $invest->contract = $request->contract;
             $invest->description = $request->description;
             $invest->customer_partner_id = $request->customer_partner_id;
             $invest->save();
@@ -87,7 +89,8 @@ class InvestmController extends Controller
         $invest->invest_name = $request->invest_name;
         $invest->images = $request->images;
         $invest->price = $request->price;
-        $invest->stock = $request->stock;
+        $invest->profit = $request->profit;
+        $invest->contract = $request->contract;
         $invest->description = $request->description;
         $invest->update_at = now();
         $invest->update();
@@ -107,7 +110,7 @@ class InvestmController extends Controller
 
     public function dataInvestm(){
         $invest = \DB::table('investations')
-                        ->select('investations.id', 'investations.invest_name', 'investations.images', 'investations.price', 'investations.stock', 'investations.profit', 'investations.contract', 'investations.description')
+                        ->select('investations.id', 'investations.invest_name', 'investations.images', 'investations.price', 'investations.profit', 'investations.contract', 'investations.description')
                         ->join('users', 'investations.customer_partner_id', 'users.id')
                         ->get();
         $no = 0;
@@ -119,8 +122,8 @@ class InvestmController extends Controller
             $row[] = $list->invest_name;
             $row[] = $list->images;
             $row[] = $list->price;
-            $row[] = $list->stock;
             $row[] = $list->profit;
+            $row[] = $list->contract;
             $row[] = $list->contract;
             $row[] = $list->description; 
             $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="editData('.$list->id.')"><i class="fas fa-edit" style="color: #ffffff;"></i>';

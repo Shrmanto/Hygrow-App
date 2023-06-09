@@ -1,9 +1,9 @@
-@component('layouts.app')
+@component('mitraMain.landing')
 
 @section('content')
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
             <button type="button" onclick="addForm()" class="btn mb-2 btn-outline-success"><span class="fe fe-upload-cloud fe-16"></span></button>
-        </div>        
+        </div>         -->
             <!-- Small table -->
                 <div class="col-md-12">
                   <div class="card shadow">

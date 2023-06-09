@@ -78,7 +78,7 @@
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('home')}}">
+              <a class="nav-link" href="{{route('Mitrhome')}}">
                 <i class="fe fe-home fe-16"></i>
                 <span class="ml-3 item-text">Dashboard</span>
               </a>
@@ -100,7 +100,7 @@
               </a>
             </li>
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('customer.index')}}">
+              <a class="nav-link" href="#">
                 <i class="fe fe-star fe-16"></i>
                 <span class="ml-3 item-text">Recap</span>
               </a>
@@ -109,7 +109,7 @@
               <span>Others</span>
             </p>
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('complaint.index')}}">
+              <a class="nav-link" href="#">
                 <i class="fe fe-message-square fe-16"></i>
                 <span class="ml-3 item-text">Order</span>
               </a>

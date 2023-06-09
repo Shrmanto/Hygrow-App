@@ -12,10 +12,11 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Product Name</th>
+                            <th>Investation Name</th>
                             <th>Images</th>
                             <th>Price</th>
-                            <th>Stock</th>
+                            <th>Profit</th>
+                            <th>Contract</th>
                             <th>Description</th>
                           </tr>
                         </thead>
@@ -24,7 +25,7 @@
                     </div>
                   </div>
                 </div>
-@include('admin.form')
+<!-- @include('admin.form') -->
                 @endsection
 
 @section('script')
@@ -45,7 +46,7 @@
                     if(!e.isDefaultPrevented()){
                         var id = $('#id').val();
                         if(save_method == "add") url = "{{ route('invest.store') }}";
-                        else url = "invest/"+id;
+                        else url = "investations/"+id;
 
                         $.ajax({
                             url : url,
@@ -75,7 +76,7 @@
                 $('input[name=_method]').val('PATCH');
                 $('#modal-form form')[0].reset();
                 $.ajax({
-                    url : "invest/"+id+"/edit",
+                    url : "investations/"+id+"/edit",
                     type : "GET",
                     dataType : "JSON",
                     success : function(data){
@@ -96,7 +97,7 @@
             }
             function deleteData(id) {
                 $.ajax({
-                    url : "invest/"+id,
+                    url : "investations/"+id,
                     type : "POST",
                     data : {'_method' : 'DELETE', '_token' : $('meta[name=csrf-token]').attr('content')},
                     success : function(data) {

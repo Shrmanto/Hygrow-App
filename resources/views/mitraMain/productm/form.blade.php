@@ -16,17 +16,17 @@
                             <label for="name" class="form-label">Product Name</label>
                             <input type="text" id="name" name="name" class="form-control" autofocus required />
                         </div>
-            </div> 
-            <div class="row">
-                        <div class="col mb-3">
-                            <label for="email" class="form-label">Price</label>
-                            <input type="text" id="price" name="price" class="form-control" required />
-                        </div>
-                    </div>
+                    </div> 
             <div class="row">
                         <div class="col mb-3">
                             <label for="email" class="form-label">Images</label>
                             <input type="text" id="image" name="image" class="form-control" required />
+                        </div>
+                    </div>
+            <div class="row">
+                        <div class="col mb-3">
+                            <label for="email" class="form-label">Price</label>
+                            <input type="text" id="price" name="price" class="form-control" required />
                         </div>
                     </div>
             <div class="row">

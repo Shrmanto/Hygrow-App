@@ -111,7 +111,7 @@ class ProductController extends Controller
 
     public function dataProduct(){
         $product = \DB::table('products')
-                        ->select('products.product_name', 'products.images', 'products.price', 'products.stock', 'products.description', 'users.name')
+                        ->select('products.id', 'products.product_name', 'products.images', 'products.price', 'products.stock', 'products.description')
                         ->join('users', 'products.customer_partner_id', 'users.id')
                         ->get();
         $no = 0;
