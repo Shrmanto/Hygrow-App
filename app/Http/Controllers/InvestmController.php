@@ -35,23 +35,23 @@ class InvestmController extends Controller
      */
     public function store(Request $request)
     {
-            $invest = new Investations;
-            $invest->invest_name = $request->invest_name;
-            $invest->images = $request->images;
-            $this->validate($request, [
-                'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            ]);
-            $image_path = $request->file('image')->store('image', 'public');
-    
-            $data = Image::create([
-                'image' => $image_path,
-            ]);
-            $invest->profit = $request->profit;
-            $invest->price = $request->price;
-            $invest->contract = $request->contract;
-            $invest->description = $request->description;
-            $invest->customer_partner_id = $request->customer_partner_id;
-            $invest->save();
+        $invest = new Investations;
+        $invest->invest_name = $request->invest_name;
+        $invest->images = $request->images;
+        $this->validate($request, [
+            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+        $image_path = $request->file('image')->store('image', 'public');
+
+        $data = Image::create([
+            'image' => $image_path,
+        ]);
+        $invest->profit = $request->profit;
+        $invest->price = $request->price;
+        $invest->contract = $request->contract;
+        $invest->description = $request->description;
+        $invest->customer_partner_id = $request->customer_partner_id;
+        $invest->save();
     }
 
     /**

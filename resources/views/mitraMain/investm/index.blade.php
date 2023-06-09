@@ -91,7 +91,6 @@
                         $('#name').val(investations.invest_name);
                         $('#images').val(investations.images);
                         $('#price').val(investations.price);
-                        $('#stock').val(investations.stock);
                         $('#profit').val(investations.profit);
                         $('#contract').val(investations.contract);
                         $('#description').val(investations.description);
