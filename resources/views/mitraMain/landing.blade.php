@@ -43,7 +43,7 @@
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="{{ route('user2.index') }}">Profile</a><!--belum route admin.profile-->
+              <a class="dropdown-item" href="{{ route('user.index') }}">Profile</a><!--belum route admin.profile-->
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

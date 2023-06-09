@@ -274,8 +274,8 @@
             <section>
             <h2 style="text-align:center;">About</h2>
                 <!-- Code begins here -->
-                <a href="linktr.ee/hygrowth" class="float">
-                <i class="social-icon-link bi-whatsapp"></i><!--PR-->
+                <a href="https://linktr.ee/hygrowth?utm_source=linktree_profile_share" class="float">
+                    <i class="social-icon-link bi-whatsapp "></i><!--PR-->
                 </a>
             </section>
 
