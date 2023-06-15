@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Icons CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/css/feather.css')}}">
+
     <link rel="stylesheet" href="{{asset('dashboard/css/dataTables.bootstrap4.css')}}">
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="{{asset('dashboard/css/daterangepicker.css')}}">
@@ -78,7 +79,7 @@
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('Mitrhome')}}">
+              <a class="nav-link" href="{{route('dashboard.mitra')}}">
                 <i class="fe fe-home fe-16"></i>
                 <span class="ml-3 item-text">Dashboard</span>
               </a>
@@ -100,7 +101,7 @@
               </a>
             </li>
             <li class="nav-item w-100">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{url('/recapm')}}">
                 <i class="fe fe-star fe-16"></i>
                 <span class="ml-3 item-text">Recap</span>
               </a>
@@ -109,7 +110,7 @@
               <span>Others</span>
             </p>
             <li class="nav-item w-100">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{url('/orderm')}}">
                 <i class="fe fe-message-square fe-16"></i>
                 <span class="ml-3 item-text">Order</span>
               </a>
@@ -126,31 +127,31 @@
         </div> <!-- .container-fluid -->
       </main> <!-- main -->
     </div> <!-- .wrapper -->
-    <script src="{{asset('dashboard/js/jquery.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/popper.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/moment.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/simplebar.min.js')}}"></script>
-    <script src="{{asset('dashboard/js/daterangepicker.js')}}"></script>
-    <script src="{{asset('dashboard/js/jquery.stickOnScroll.js')}}"></script>
-    <script src="{{asset('dashboard/js/tinycolor-min.js')}}"></script>
-    <script src="{{asset('dashboard/js/config.js')}}"></script>
-    <script src="{{asset('dashboard/js/apps.js')}}"></script>
-    <script src="{{asset('dashboard/js/jquery.dataTables.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="{{asset('dashboard/js/dataTables.bootstrap4.min.js')}}></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
+  <script src="{{asset('dashboard/js/jquery.min.js')}}"></script>
+  <script src="{{asset('dashboard/js/popper.min.js')}}"></script>
+  <script src="{{asset('dashboard/js/moment.min.js')}}"></script>
+  <script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
+  <script src="{{asset('dashboard/js/simplebar.min.js')}}"></script>
+  <script src="{{asset('dashboard/js/daterangepicker.js')}}"></script>
+  <script src="{{asset('dashboard/js/jquery.stickOnScroll.js')}}"></script>
+  <script src="{{asset('dashboard/js/tinycolor-min.js')}}"></script>
+  <script src="{{asset('dashboard/js/config.js')}}"></script>
+  <script src="{{asset('dashboard/js/apps.js')}}"></script>
+  <script src="{{asset('dashboard/js/jquery.dataTables.min.js')}}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="{{asset('dashboard/js/dataTables.bootstrap4.min.js')}}></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56159088-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      function gtag()
-      {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-56159088-1');
-    </script>
-    @yield('script')
+    function gtag()
+    {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-56159088-1');
+  </script>
+  @yield('script')
   </body>
 </html>

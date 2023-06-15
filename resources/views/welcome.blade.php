@@ -115,33 +115,31 @@
                     <div id="navbarNav" class="collapse navbar-collapse" >
                         <ul class="navbar-nav mx-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#hero">Home</a>
+                                <a class="nav-link" href="{{url('/home')}}">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('about') }}">About</a>
+                                <a class="nav-link" href="{{url('/about')}}">About</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('hygromart') }}">HyGMart</a>
+                                <a class="nav-link" href="/hygromart">Hygmart</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#news">HyGrovest</a>
+                                <a class="nav-link" href="/hygrovest">HyGrovest</a>
                             </li>
                         </ul>
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle bg-success" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                         Get Started
+                            Get Started
                         </button>
-                     <ul class="dropdown-menu">
+                        <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="{{route('login')}}">Sign In</a></li>
                         <li><a class="dropdown-item" href="{{route('register')}}">Sign Up</a></li>
                         <!--<div class="dropdown-divider"></div>-->
-                     </ul>
-                    </div>
-                     </ul>
+                        </ul>
                     </div>
                 </div>
             </nav><!-- ======= End Navbar ======= -->
@@ -202,7 +200,7 @@
                                     <img src="{{asset('landing2/assets/img/online-shop.png')}}" alt="img">
                                     <h4>HyGMart</h4>
                                     <p>Menyediakan kebutuhan hidroponik anda</p>
-                                    <a href="#">selengkapnya</a>
+                                    <a href="/hygromart">selengkapnya</a>
                                 </div>
                             </div>
                         <div class="col-md-10 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
@@ -386,7 +384,7 @@
                     </div>
 
                     <div class="col-6">
-                        <p class="copyright-text mb-0">Copyright © Hygrow 2023 </p>
+                        <p class="copyright-text mb-0">Copyright© Hygrow 2023 </p>
                     </div>
 
                     <div class="col-lg-2 col-5 ms-auto">

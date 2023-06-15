@@ -15,11 +15,10 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code_customer');
             $table->text('address');
-            $table->string('phone_number', 13);
+            $table->string('phone_number');
             $table->date('date_of_birth');
-            $table->unsignedInteger('user_id');
+            $table->integer('user_id', false, true);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->casecadeOnUpdate()->casecadeOnDelete();

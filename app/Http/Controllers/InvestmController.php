@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 use App\Models\Investations;
+use App\Models\Partners;
+use App\Models\User;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+
 
 class InvestmController extends Controller
 {
@@ -14,7 +20,8 @@ class InvestmController extends Controller
      */
     public function index()
     {
-        return view('mitraMain.investm.index'); 
+        $this->param['getInvest'] = Investations::all();
+        return view('mitraMain.investm.index', $this->param); 
     }
 
     /**
@@ -24,7 +31,7 @@ class InvestmController extends Controller
      */
     public function create()
     {
-        //
+        return view('mitraMain.investm.form'); 
     }
 
     /**
@@ -35,23 +42,28 @@ class InvestmController extends Controller
      */
     public function store(Request $request)
     {
-        $invest = new Investations;
-        $invest->invest_name = $request->invest_name;
-        $invest->images = $request->images;
-        $this->validate($request, [
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ]);
-        $image_path = $request->file('image')->store('image', 'public');
+            $invest = new Investations;
+            $request->validate([
+                'images'=>'required|mimes:jpg,jpeg,png|max:5000',
+            ]);
+    
+            $image = $request->file('images');
+            $fileName = hexdec(uniqid()).'.'.$image->getClientOriginalName();
+            $request->images->move(public_path('uploads'), $fileName);
+            $img_url = 'uploads/' . $fileName;
+    
+            $invest->invest_name = $request->invest_name;
+            $invest->images = $img_url;
+            $invest->price = $request->price;
+            $invest->stock = $request->stock;
+            $invest->profit = $request->profit;
+            $invest->contract = $request->contract;
+            $invest->description = $request->description;
 
-        $data = Image::create([
-            'image' => $image_path,
-        ]);
-        $invest->profit = $request->profit;
-        $invest->price = $request->price;
-        $invest->contract = $request->contract;
-        $invest->description = $request->description;
-        $invest->customer_partner_id = $request->customer_partner_id;
-        $invest->save();
+            $invest->customer_partner_id = $request->customer_partner_id;
+            $invest->save();
+
+            return redirect('/investm');
     }
 
     /**
@@ -62,38 +74,37 @@ class InvestmController extends Controller
      */
     public function show($id)
     {
-        //
+        $this->param['getDetailInvest'] = Investations::find($id);
+        return view('mitraMain.investm.edit', $this->param);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $invest = Investations::find($id);
+        $request->validate([
+            'images'=>'required|mimes:jpg,jpeg,png|max:5000',
+        ]);
+
+        $image = $request->file('images');
+        $fileName = hexdec(uniqid()).'.'.$image->getClientOriginalName();
+        $request->images->move(public_path('uploads'), $fileName);
+        $img_url = 'uploads/' . $fileName;
+
         $invest->invest_name = $request->invest_name;
-        $invest->images = $request->images;
+        $invest->images = $img_url;
         $invest->price = $request->price;
-        $invest->profit = $request->profit;
-        $invest->contract = $request->contract;
+        $invest->stock = $request->stock;
         $invest->description = $request->description;
-        $invest->update_at = now();
+
+        $invest->customer_partner_id = $request->customer_partner_id;
         $invest->update();
+
+        return redirect('/investm');
     }
 
     /**
@@ -106,11 +117,12 @@ class InvestmController extends Controller
     {
         $invest = Investations::find($id);
         $invest->delete();
+        return redirect('/investm');
     }
 
     public function dataInvestm(){
         $invest = \DB::table('investations')
-                        ->select('investations.id', 'investations.invest_name', 'investations.images', 'investations.price', 'investations.profit', 'investations.contract', 'investations.description')
+                        ->select('investations.id', 'investations.invest_name', 'investations.images', 'investations.price', 'investations.stock', 'investations.profit', 'investations.contract', 'investations.description')
                         ->join('users', 'investations.customer_partner_id', 'users.id')
                         ->get();
         $no = 0;
@@ -122,8 +134,8 @@ class InvestmController extends Controller
             $row[] = $list->invest_name;
             $row[] = $list->images;
             $row[] = $list->price;
+            $row[] = $list->stock;
             $row[] = $list->profit;
-            $row[] = $list->contract;
             $row[] = $list->contract;
             $row[] = $list->description; 
             $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="editData('.$list->id.')"><i class="fas fa-edit" style="color: #ffffff;"></i>';

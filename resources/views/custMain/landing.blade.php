@@ -88,7 +88,7 @@
                     </p>
                 </div>
 
-                <div class="videoWrapper">
+                <div class="videoWrapper" style="z-index: 99;">
                     <video autoplay="" loop="" muted="" class="custom-video" poster="videos/792bd98f3e617786c850493560e11c45.jpg">
                         <source src="{{asset('landing/videos/landing1.mp4')}}" type="video/mp4">
 
@@ -118,15 +118,15 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('Custabout') }}">About</a>
+                                <a class="nav-link" href="#about">About</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('hygromart') }}">HyGMart</a>
+                                <a class="nav-link" href="/hygromart">HyGMart</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#news">HyGrovest</a>
+                                <a class="nav-link" href="/hygrovest">HyGrovest</a>
                             </li>
                         </ul>
                     </div>
@@ -274,7 +274,7 @@
             <section>
             <h2 style="text-align:center;">About</h2>
                 <!-- Code begins here -->
-                <a href="https://linktr.ee/hygrowth" class="float">
+                <a href="https://linktr.ee/hygrowth?utm_source=linktree_profile_share" class="float">
                 <i class="social-icon-link bi-whatsapp"></i><!--PR-->
                 </a>
             </section>

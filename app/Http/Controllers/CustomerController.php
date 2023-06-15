@@ -1,11 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Customers;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\DataTables;
 
 class CustomerController extends Controller
 {
@@ -37,20 +35,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = new User;
+        $customer = new User; 
         $customer->name = $request->name;
         $customer->email = $request->email;
+        $customer->address = $request->address;
+        $customer->phone_number = $request->phone_number;
+        $customer->date_of_birth = $request->date_of_birth;
         $customer->password = bcrypt($request->password);
-        $customer->assignRole('customer');
-        if ($customer->save()) {
-            $customer = new Customers();
-            $customer->user_id = $customer->id;
-            $customer->address = $request->address;
-            $customer->phone_number = $request->phone_number;
-            $customer->date_of_birth = $request->date_of_birth;
-            $customer->save();
-            return redirect()->route('login')->with('success', 'Success Register');
-        }
+        $customer->save();
     }
 
     /**
@@ -72,7 +64,8 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-
+        $customer = User::find($id);
+        echo json_encode($customer);
     }
 
     /**
@@ -84,7 +77,15 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        $customer = User::find($id);
+        $customer->name = $request->name;
+        $customer->email = $request->email;
+        $customer->address = $request->address;
+        $customer->phone_number = $request->phone_number;
+        $customer->date_of_birth = $request->date_of_birth;
+        $customer->password = bcrypt($request->password);
+        $customer->update_at = now();
+        $customer->update();
     }
 
     /**
@@ -95,31 +96,31 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        $customer = User::find($id);
+        $customer = Customer::find($id);
         $customer->delete();
     }
 
-    public function dataCust()
-    {
-        $customer = DB::table('customers')
-            ->select('users.id', 'users.name', 'users.email', 'customers.address', 'customers.phone_number')
-            ->join('users', 'customers.user_id', 'users.id')
-            ->get();
+    public function dataCust(){
+        $customer = \DB::table('customers')
+                        ->select('users.id', 'users.name', 'users.email', 'customers.address', 'customers.phone_number')
+                        ->join('users', 'customers.user_id', 'users.id')
+                        ->get();
         $no = 0;
         $data = array();
-        foreach ($customer as $list) {
+        foreach($customer as $list){
             $no++;
             $row = array();
             $row[] = $no;
             $row[] = $list->name;
             $row[] = $list->email;
             $row[] = $list->address;
-            $row[] = $list->phone_number;
+            $row[] = $list->phone_number; 
             '';
-
-            $data[] = $row;
+           
+            $data[]= $row; 
         }
         $output = array("data" => $data);
         return response()->json($output);
+
     }
 }

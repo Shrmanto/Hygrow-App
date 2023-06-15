@@ -11,4 +11,6 @@ class Products extends Model
     use HasFactory, HasRoles;
     protected $table = 'products';
     protected $primaryKey = 'id';
+
 }
+

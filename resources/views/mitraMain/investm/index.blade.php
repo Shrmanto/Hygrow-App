@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="col-md-12">
-            <button type="button" onclick="addForm()" class="btn mb-2 btn-outline-success"><span class="fe fe-upload-cloud fe-16"></span></button>
+            <a type="button" href="{{url('/investm/add')}}" class="btn mb-2 btn-outline-success"><i class="fas fa-user-plus"></i></a>
         </div>        
             <!-- Small table -->
                 <div class="col-md-12">
@@ -13,106 +13,44 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>Investation Name</th>
-                            <th>Images</th>
+                            <th>Product Name</th>
                             <th>Price</th>
-                            <th>Profit</th>
+                            <th>Images</th>
+                            <th>Stock</th>
+                            <th>Price</th>
                             <th>Contract</th>
                             <th>Description</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no = 1;?>
+                            @foreach ($getInvest as $item)
+                                <tr>
+                                    <td>{{$no++}}</td>
+                                    <td>{{$item->invest_name}}</td>
+                                    <td>{{$item->price}}</td>
+                                    <td>
+                                      <img src="{{asset($item->images) }}" style="height: 50px;width:50px;">                                 
+                                    </td>
+                                    <td>{{$item->stock}}</td>
+                                    <td>{{$item->profit}}</td>
+                                    <td>{{$item->contract}}</td>
+                                    <td>{{$item->description}}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{url('/investm/edit/'.$item->id.'')}}" type="button" class="btn btn-warning"><i class="fas fa-edit" style="color: #ffffff;"></i></a>
+                                            <a href="{{url('/investms/delete/'.$item->id.'')}}" type="submit" onclick="confirm('yakin menghapus data?')" class="btn btn-danger"><i class="far fa-trash-alt" style="color: #ffffff;"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            @endforeach
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+@endsection 
 
-@include('mitraMain.investm.form')
-@endsection
-
-@section('script')
-    <script type="text/javascript">
-        var table, save_method;
-        $(function(){
-            table = $('#table').DataTable({
-                "processing" : true,
-                'responsive' : true,
-                'scrollY'     : true,
-                'autoWidth'   : true,
-                "ajax" : {
-                "url" : "{{ route('investm.data') }}",
-                "type" : "GET"
-                    }
-            });
-            $('#modal-form form').on('submit', function(e){
-                    if(!e.isDefaultPrevented()){
-                        var id = $('#id').val();
-                        if(save_method == "add") url = "{{ route('investm.store') }}";
-                        else url = "investations/"+id;
-
-                        $.ajax({
-                            url : url,
-                            type : "POST",
-                            data : $('#modal-form form').serialize(),
-                            success : function(data){
-                                $('#modal-form').modal('hide');
-                                table.ajax.reload();
-                            },
-                            error : function(){
-                                alert("Tidak dapat menyimpan data!");
-                            }
-                        });
-                        return false;
-                    }
-                });
-        });
-        function addForm(){
-                save_method = "add";
-                $('input[name=_method]').val('POST');
-                $('#modal-form').modal('show');
-                $('#modal-form form')[0].reset();
-                $('.modal-title').text('Add Data');
-            }
-        function editForm(id){
-                save_method = "edit";
-                $('input[name=_method]').val('PATCH');
-                $('#modal-form form')[0].reset();
-                $.ajax({
-                    url : "investations/"+id+"/edit",
-                    type : "GET",
-                    dataType : "JSON",
-                    success : function(data){
-                        $('#modal-form').modal('show');
-                        $('.modal-title').text('Edit Data');
-
-                        $('#id').val(investations.id);
-                        $('#name').val(investations.invest_name);
-                        $('#images').val(investations.images);
-                        $('#price').val(investations.price);
-                        $('#profit').val(investations.profit);
-                        $('#contract').val(investations.contract);
-                        $('#description').val(investations.description);
-                    },
-                    error : function(){
-                        alert("Tidak dapat menampilkan data!");
-                    }
-                });
-            }
-            function deleteData(id) {
-                $.ajax({
-                    url : "investations/"+id,
-                    type : "POST",
-                    data : {'_method' : 'DELETE', '_token' : $('meta[name=csrf-token]').attr('content')},
-                    success : function(data) {
-                        table.ajax.reload();
-                    },
-                    error : function () {
-                        alert("Tidak dapat menampilkan data!");
-                    }
-                });
-            }
-    </script>
-@endsection
 @endcomponent

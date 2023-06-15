@@ -1,59 +1,56 @@
-<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-        <form method="POST" class="form-horizontal" data-toggle="validator">
-                {{ csrf_field() }} {{ method_field('POST') }}
-            <div class="modal-header">
-                <h5 class="modal-title" id="defaultModalLabel">Data Investation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            <input type="hidden" id="id" name="id"/>
-                    <div class="row">
-                        <div class="col mb-3">
-                            <label for="name" class="form-label">Investation Name</label>
-                            <input type="text" id="name" name="name" class="form-control" autofocus required />
-                        </div>
-            </div> 
+@extends('mitraMain.landing')
+@section('content')
+<form method="POST" class="form-horizontal" action="{{route('investm.store')}}" enctype="multipart/form-data">
+    @csrf
+    @method('post')
+    <input type="hidden" id="customer_partner_id" name="customer_partner_id" value="{{Auth::user()->id}}"/>
             <div class="row">
-                        <div class="col mb-3">
-                            <label for="email" class="form-label">Images</label>
-                            <input type="text" id="image" name="image" class="form-control" required />
-                        </div>
-                    </div>
-            <div class="row">
-                        <div class="col mb-3">
-                            <label for="email" class="form-label">Price</label>
-                            <input type="number" id="price" name="price" class="form-control" required />
-                        </div>
-                    </div>
-            <div class="row">
-                        <div class="col mb-3">
-                            <label for="address" class="form-label">Profit</label>
-                            <input type="text" id="profit" name="profit" class="form-control" required />
-                        </div>
-            </div>
-            <div class="row">
-                        <div class="col mb-3">
-                            <label for="phone_number" class="form-label">Contract</label>
-                            <input type="text" id="contract" name="contract" class="form-control" required />
-                        </div>
-                    </div>
-            <div class="row">
-                        <div class="col mb-3">
-                            <label for="password" class="form-label">Description</label>
-                            <input type="text" id="desc" name="desc" class="form-control" required />
-                        </div>
-                    </div> 
-            <div class="modal-footer">
-                    <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn mb-2 btn-primary">Save changes</button>
+                <div class="col mb-3">
+                    <label for="name" class="form-label">Invest Name</label>
+                    <input type="text" id="invest_name" name="invest_name" class="form-control" autofocus required />
+                </div>
+    </div> 
+    <div class="row">
+                <div class="col mb-3">
+                    <label for="email" class="form-label">Price</label>
+                    <input type="text" id="price" name="price" class="form-control" required />
                 </div>
             </div>
-        </div>
-</form>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="email" class="form-label">Images</label>
+                    <input type="file" id="images" name="images" class="form-control" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="text" id="stock" name="stock" class="form-control" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="stock" class="form-label">Profit</label>
+                    <input type="number" id="profit" name="profit" class="form-control" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                    <label for="stock" class="form-label">Contract</label>
+                    <input type="text" id="contract" name="contract" class="form-control" required />
+                </div>
+            </div>
+    <div class="row">
+                <div class="col mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" id="description" name="description" class="form-control" required />
+                </div>
+    </div>
+    <div class="modal-footer">
+            <button type="button" class="btn mb-2 btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn mb-2 btn-primary">Save changes</button>
         </div>
     </div>
 </div>
+</form>
+@endsection 

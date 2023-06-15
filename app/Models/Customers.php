@@ -11,4 +11,10 @@ class Customers extends Model
     use HasFactory, HasRoles;
     protected $table = 'customers';
     protected $primaryKey = 'id';
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
 }

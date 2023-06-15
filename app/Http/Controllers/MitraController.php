@@ -115,7 +115,7 @@ class MitraController extends Controller
             $row[] = $list->email;
             $row[] = $list->address;
             $row[] = $list->phone_number;
-            // $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id.')"><i class="far fa-trash-alt" style="color: #ffffff;"></i></a>';
+            $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData('.$list->id.')"><i class="far fa-trash-alt" style="color: #ffffff;"></i></a>';
             $data[]= $row;
         }
         $output = array("data" => $data);

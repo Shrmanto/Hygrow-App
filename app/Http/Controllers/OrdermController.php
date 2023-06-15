@@ -13,7 +13,13 @@ class OrdermController extends Controller
      */
     public function index()
     {
-        //
+        $this->param['getOrders'] = \DB::table('orders')
+        ->select('products.product_name', 'products.images', 'products.price', 'users.name', 'orders.status_payment', 'orders.date_order', 'orders.id', 'orders.product_id')
+        ->join('products', 'orders.product_id', 'products.id')
+        ->join('users', 'orders.user_id', 'users.id')
+        ->where('status_payment', '=', 'belum dibayar')
+        ->get();
+        return view ('mitraMain.orderm.index',  $this->param);
     }
 
     /**

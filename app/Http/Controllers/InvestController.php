@@ -14,7 +14,9 @@ class InvestController extends Controller
      */
     public function index()
     {
-        return view('invest.index');
+        $this->param['getInvest'] = Investations::all();
+        return view('invest.index', $this->param);
+        
         
     }
 
@@ -37,22 +39,27 @@ class InvestController extends Controller
     public function store(Request $request)
     {
         $invest = new Investations;
-        $invest->invest_name = $request->invest_name;
-        $invest->images = $request->images;
-        $this->validate($request, [
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-        ]);
-        $image_path = $request->file('image')->store('image', 'public');
+            $request->validate([
+                'images'=>'required|mimes:jpg,jpeg,png|max:5000',
+            ]);
+    
+            $image = $request->file('images');
+            $fileName = hexdec(uniqid()).'.'.$image->getClientOriginalName();
+            $request->images->move(public_path('uploads'), $fileName);
+            $img_url = 'uploads/' . $fileName;
+    
+            $invest->invest_name = $request->invest_name;
+            $invest->images = $img_url;
+            $invest->price = $request->price;
+            $invest->stock = $request->stock;
+            $invest->profit = $request->profit;
+            $invest->contract = $request->contract;
+            $invest->description = $request->description;
 
-        $data = Image::create([
-            'image' => $image_path,
-        ]);
-        $invest->profit = $request->profit;
-        $invest->price = $request->price;
-        $invest->contract = $request->contract;
-        $invest->description = $request->description;
-        $invest->customer_partner_id = $request->customer_partner_id;
-        $invest->save();
+            $invest->customer_partner_id = $request->customer_partner_id;
+            $invest->save();
+
+            return redirect('/invest');
     }
 
     /**
@@ -87,14 +94,25 @@ class InvestController extends Controller
     public function update(Request $request, $id)
     {
         $invest = Investations::find($id);
+        $request->validate([
+            'images'=>'required|mimes:jpg,jpeg,png|max:5000',
+        ]);
+
+        $image = $request->file('images');
+        $fileName = hexdec(uniqid()).'.'.$image->getClientOriginalName();
+        $request->images->move(public_path('uploads'), $fileName);
+        $img_url = 'uploads/' . $fileName;
+
         $invest->invest_name = $request->invest_name;
-        $invest->images = $request->images;
+        $invest->images = $img_url;
         $invest->price = $request->price;
-        $invest->profit = $request->profit;
-        $invest->contract = $request->contract;
+        $invest->stock = $request->stock;
         $invest->description = $request->description;
-        $invest->update_at = now();
+
+        $invest->customer_partner_id = $request->customer_partner_id;
         $invest->update();
+
+        return redirect('/invest');
     }
 
     /**
@@ -105,13 +123,12 @@ class InvestController extends Controller
      */
     public function destroy($id)
     {
-        $invest = Investations::find($id);
-        $invest->delete();
+        
     }
 
     public function dataInvest(){
         $invest = \DB::table('investations')
-                        ->select('investations.id', 'investations.invest_name', 'investations.images', 'investations.price', 'investations.profit', 'investations.contract', 'investations.description')
+                        ->select('investations.invest_name', 'investations.images', 'investations.price', 'investations.stock', 'investations.description', 'users.id', 'users.name')
                         ->join('users', 'investations.customer_partner_id', 'users.id')
                         ->get();
         $no = 0;
@@ -123,9 +140,7 @@ class InvestController extends Controller
             $row[] = $list->invest_name;
             $row[] = $list->images;
             $row[] = $list->price;
-            $row[] = $list->profit;
-            $row[] = $list->contract;
-            $row[] = $list->contract;
+            $row[] = $list->stock;
             $row[] = $list->description; 
             '';
             $data[]= $row; 

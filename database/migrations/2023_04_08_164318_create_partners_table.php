@@ -15,7 +15,6 @@ class CreatePartnersTable extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code_partners');
             $table->text('address');
             $table->string('phone_number', 13);
             $table->unsignedInteger('user_id'); // foreign key

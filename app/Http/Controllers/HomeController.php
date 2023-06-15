@@ -11,10 +11,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     /**
      * Show the application dashboard.
@@ -23,41 +19,21 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-    public function indexx()
-    {
-        return view('mitraMain.home');
-    }
-
-    public function index1()
-    {
         return view('welcome');
     }
 
-    public function index2()
+    public function dashboard()
     {
-        return view('custMain.landing');
+        return view('home');
     }
 
-    public function index3()
+    public function dashboardMitra()
     {
-        return view('custMain.landing');
+        return view('mitraMain.home');
     }
 
     public function about()
     {
         return view('about');
     }
-
-    public function about2()
-    {
-        return view('custMain.about');
-    }
-
-    // public function hygrmart()
-    // {
-    //     return view('hygmart');
-    // }
 }

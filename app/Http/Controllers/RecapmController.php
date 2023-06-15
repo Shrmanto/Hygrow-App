@@ -13,7 +13,13 @@ class RecapmController extends Controller
      */
     public function index()
     {
-        //
+        $this->param['getOrders'] = \DB::table('orders')
+        ->select('products.product_name', 'products.images', 'products.price', 'users.name', 'orders.status_payment', 'orders.date_order', 'orders.id', 'orders.product_id')
+        ->join('products', 'orders.product_id', 'products.id')
+        ->join('users', 'orders.user_id', 'users.id')
+        ->where('status_payment', '=', 'sudah dibayar')
+        ->get();
+        return view ('mitraMain.recapm.index',  $this->param);
     }
 
     /**

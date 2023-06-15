@@ -15,10 +15,10 @@ class CreateInvestationsTable extends Migration
     {
         Schema::create('investations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code_invest');
             $table->string('invest_name');
             $table->string('images');
             $table->integer('price');
+            $table->integer('stock'); 
             $table->string('profit');
             $table->string('contract');
             $table->text('description');

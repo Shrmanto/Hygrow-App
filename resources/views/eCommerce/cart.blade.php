@@ -1,488 +1,552 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.css" />
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title Tag  -->
+    <title>Cart Hygrow</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="{{asset('hygmart/images/favicon.png')}}">
+	<!-- Web Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{{asset('hygmart/css/bootstrap.css')}}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/magnific-popup.min.css')}}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/font-awesome.css')}}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{{asset('hygmart/css/jquery.fancybox.min.css')}}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/themify-icons.css')}}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/niceselect.css')}}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/animate.css')}}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/flex-slider.min.css')}}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/owl-carousel.css')}}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/slicknav.min.css')}}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{{asset('hygmart/css/reset.css')}}">
+	<link rel="stylesheet" href="{{asset('hygmart/style.css')}}">
+    <link rel="stylesheet" href="{{asset('hygmart/css/responsive.css')}}">
+
+
+	
 </head>
-<body>
-    <header>
-  <!-- Jumbotron -->
-  <div class="p-3 text-center bg-white border-bottom">
-    <div class="container">
-      <div class="row gy-3">
-        <!-- Left elements -->
-        <div class="col-lg-2 col-sm-4 col-4">
-          <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
-            <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
-          </a>
-        </div>
-        <!-- Left elements -->
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+		
+		<!-- Header -->
+		<header class="header shop">
+			<!-- Topbar -->
+			<div class="topbar">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-12 col-12">
+							
+						</div>
+						<div class="col-lg-8 col-md-12 col-12">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Topbar -->
+			<div class="middle-inner">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-2 col-md-2 col-12">
+							<!-- Logo -->
+							<div class="logo">
+								<a href="index.html"><img src="{{asset('hygmart/images/logo.png')}}" alt="logo"></a>
+							</div>
+							<!--/ End Logo -->
+							<!-- Search Form -->
+							<div class="search-top">
+								<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+								<!-- Search Form -->
+								<div class="search-top">
+									<form class="search-form">
+										<input type="text" placeholder="Search here..." name="search">
+										<button value="search" type="submit"><i class="ti-search"></i></button>
+									</form>
+								</div>
+								<!--/ End Search Form -->
+							</div>
+							<!--/ End Search Form -->
+							<div class="mobile-nav"></div>
+						</div>
+						<div class="col-lg-8 col-md-7 col-12">
+							<div class="search-bar-top">
+								<div class="search-bar">
+									<form>
+										<input name="search" placeholder="Search Products Here....." type="search">
+										<button class="btnn"><i class="ti-search"></i></button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!--Cart-->
+						<div class="col-lg-2 col-md-3 col-12">
+							<div class="right-bar">
+								<!-- Search Form -->
+								<div class="sinlge-bar">
+									<a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+								</div>
+								<div class="sinlge-bar">
+									<a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+								</div>
+								<div class="sinlge-bar shopping">
+									<a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+									<!-- Shopping Item -->
+									<div class="shopping-item">
+										<div class="dropdown-cart-header">
+											<span>2 Items</span>
+											<a href="#">View Cart</a>
+										</div>
+										<ul class="shopping-list">
+											<li>
+												<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
+												<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
+												<h4><a href="#">Woman Ring</a></h4>
+												<p class="quantity">1x - <span class="amount">$99.00</span></p>
+											</li>
+											<li>
+												<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
+												<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
+												<h4><a href="#">Woman Necklace</a></h4>
+												<p class="quantity">1x - <span class="amount">$35.00</span></p>
+											</li>
+										</ul>
+										<div class="bottom">
+											<div class="total">
+												<span>Total</span>
+												<span class="total-amount">$134.00</span>
+											</div>
+											<a href="checkout.html" class="btn animate">Checkout</a>
+										</div>
+									</div>
+									<!--/ End Shopping Item -->
+								</div>
+							</div>
+						</div>
+						<!--End Cart-->
+					</div>
+				</div>
+			</div>
+			<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="cat-nav-head">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="all-category">
+								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>HyGMart</h3>
+									</li>
+							</div>
+						</div>
+						<div class="col-lg-9 col-12">
+							<div class="menu-area">
+								<!-- Main Menu -->
+								<nav class="navbar navbar-expand-lg">
+									<div class="navbar-collapse">	
+										<div class="nav-inner">	
+											<ul class="nav main-menu menu navbar-nav">
+													<li class="active"><a href="#">Home</a></li>											
+													<li><a href="#">HyGrovest</a></li>
+													<!--<li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
+														<ul class="dropdown">
+															<li><a href="shop-grid.html">Shop Grid</a></li>
+															<li><a href="cart.html">Cart</a></li>
+															<li><a href="checkout.html">Checkout</a></li>
+														</ul>
+													</li>-->
+													<li><a href="contact.html">Contact Us</a></li>
+												</ul>
+										</div>
+									</div>
+								</nav>
+								<!--/ End Main Menu -->		
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!--/ End Header -->
+	
+	<!-- Breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="bread-inner">
+						<ul class="bread-list">
+							<li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="blog-single.html">Cart</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Breadcrumbs -->
+			
+	
+	<div class="shopping-cart section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- Shopping Summery -->
+					<table class="table shopping-summery">
+						<thead>
+							<tr class="main-hading">
+								<th>PRODUCT</th>
+								<th>NAME</th>
+								<th class="text-center">UNIT PRICE</th>
+								<th class="text-center">QUANTITY</th>
+								<th class="text-center">TOTAL</th> 
+							</tr>
+						</thead>
+						<tbody>
+							@foreach ($getCart as $item)
+							<tr>
+								<td class="image" data-title="No"><img src={{asset($item->images)}} alt="#"></td>
+								<td class="product-des" data-title="Description">
+									<input type="hidden" name="product_id" value="{{$item->id}}">
+									<input type="hidden" name="product_id" value="{{Auth::user()->id}}">
+									<p class="product-name"><a href="">{{$item->product_name}}</a></p>
+									<p class="product-des">{{$item->description}}</p>
+								</td>
+								<td class="price" data-title="Price"><span>@currency($item->price)</span></td>
+								<td class="price" data-title="Price"><span>{{$item->total_order}}</span></td>
+								<td class="price" data-title="Price"><span>@currency($item->total_price)</span></td>
+							</tr>
+							@endforeach
+							
+						</tbody>
+					</table>
+					<!--/ End Shopping Summery -->
+				</div>
+			</div>
+			
 
-        <!-- Center elements -->
-        <div class="order-lg-last col-lg-5 col-sm-8 col-8">
-          <div class="d-flex float-end">
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
-              <i class="fas fa-user-alt m-1 me-md-2"></i>
-              <p class="d-none d-md-block mb-0">Sign in</p>
-            </a>
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
-              <i class="fas fa-heart m-1 me-md-2"></i>
-              <p class="d-none d-md-block mb-0">Wishlist</p>
-            </a>
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank">
-              <i class="fas fa-shopping-cart m-1 me-md-2"></i>
-              <p class="d-none d-md-block mb-0">My cart</p>
-            </a>
-          </div>
-        </div>
-        <!-- Center elements -->
+			<div class="row">
+				<form action="{{url('/checkout-product')}}" method="POST" enctype="multipart/form-data">
+				@csrf
+				@method('post')
+					<div class="col-12">
+						<!-- Total Amount -->
+						<div class="total-amount">
+							@foreach ($getCart as $item =>$info)
+								<input type="hidden" name="orders[{{ $item }}][product_id]" value="{{$info->id}}" id="">
+								<input type="hidden" name="orders[{{ $item }}][user_id]" value="{{Auth::user()->id}}" id="">								
+								<input type="hidden" name="orders[{{ $item }}][status_payment]" value="belum dibayar" id="">								
+								<input type="hidden" name="orders[{{ $item }}][date_order]" value="{{Carbon\Carbon::now();}}" id="">								
+							@endforeach
+							<div class="row">
+								<div class="">
+									<div class="right">
+										<ul>
+											<label for="date_order">Tanggal Bayar</label>
+											<input type="date" name="orders[{{ $item }}][date_order]" class="form-control" required>
+											<li class="last">Total Harga<span>@currency($totalPrice)</span></li>
+										</ul>
+										<div class="button5">
+											<button type="submit" class="btn">Checkout</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--/ End Total Amount -->
+					</div>
 
-        <!-- Right elements -->
-        <div class="col-lg-5 col-md-12 col-12">
-          <div class="input-group float-center">
-            <div class="form-outline">
-              <input type="search" id="form1" class="form-control" />
-              <label class="form-label" for="form1">Search</label>
-            </div>
-            <button type="button" class="btn btn-primary shadow-0">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-        <!-- Right elements -->
-      </div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
     </div>
-  </div>
-  <!-- Jumbotron -->
+	<a href="{{url('/co')}}" class="btn btn-info">Lanjutkan Pembayaran</a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.shopping-cart').remove();
+        });
+    </script>
+@endif
 
-  <!-- Heading -->
-  <div class="bg-primary">
-    <div class="container py-4">
-      <!-- Breadcrumb -->
-      <nav class="d-flex">
-        <h6 class="mb-0">
-          <a href="" class="text-white-50">Home</a>
-          <span class="text-white-50 mx-2"> > </span>
-          <a href="" class="text-white"><u>Shopping cart</u></a>
-        </h6>
-      </nav>
-      <!-- Breadcrumb -->
-    </div>
-  </div>
-  <!-- Heading -->
-</header>
 
-<!-- cart + summary -->
-<section class="bg-light my-5">
-  <div class="container">
-    <div class="row">
-      <!-- cart -->
-      <div class="col-lg-9">
-        <div class="card border shadow-0">
-          <div class="m-4">
-            <h4 class="card-title mb-4">Your shopping cart</h4>
-            <div class="row gy-3 mb-4">
-              <div class="col-lg-5">
-                <div class="me-lg-5">
-                  <div class="d-flex">
-                    <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/11.webp" class="border rounded me-3" style="width: 96px; height: 96px;" />
-                    <div class="">
-                      <a href="#" class="nav-link">Winter jacket for men and lady</a>
-                      <p class="text-muted">Yellow, Jeans</p>
+	<!-- Shopping Cart -->
+	
+	<!--/ End Shopping Cart -->
+			
+	
+	
+	
+	<!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
-                <div class="">
-                  <select style="width: 100px;" class="form-select me-4">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                </div>
-                <div class="">
-                  <text class="h6">$1156.00</text> <br />
-                  <small class="text-muted text-nowrap"> $460.00 / per item </small>
-                </div>
-              </div>
-              <div class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
-                <div class="float-md-end">
-                  <a href="#!" class="btn btn-light border px-2 icon-hover-primary"><i class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
-                  <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="row gy-3 mb-4">
-              <div class="col-lg-5">
-                <div class="me-lg-5">
-                  <div class="d-flex">
-                    <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/12.webp" class="border rounded me-3" style="width: 96px; height: 96px;" />
-                    <div class="">
-                      <a href="#" class="nav-link">Mens T-shirt Cotton Base</a>
-                      <p class="text-muted">Blue, Medium</p>
+                    <div class="modal-body">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <!-- Product Slider -->
+									<div class="product-gallery">
+										<div class="quickview-slider-active">
+											<div class="single-slider">
+												<img src="images/modal1.jpg" alt="#">
+											</div>
+											<div class="single-slider">
+												<img src="images/modal2.jpg" alt="#">
+											</div>
+											<div class="single-slider">
+												<img src="images/modal3.jpg" alt="#">
+											</div>
+											<div class="single-slider">
+												<img src="images/modal4.jpg" alt="#">
+											</div>
+										</div>
+									</div>
+								<!-- End Product slider -->
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="quickview-content">
+                                    <h2>Flared Shift Dress</h2>
+                                    <div class="quickview-ratting-review">
+                                        <div class="quickview-ratting-wrap">
+                                            <div class="quickview-ratting">
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <a href="#"> (1 customer review)</a>
+                                        </div>
+                                        <div class="quickview-stock">
+                                            <span><i class="fa fa-check-circle-o"></i> in stock</span>
+                                        </div>
+                                    </div>
+                                    <h3>$29.00</h3>
+                                    <div class="quickview-peragraph">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
+                                    </div>
+									<div class="size">
+										<div class="row">
+											<div class="col-lg-6 col-12">
+												<h5 class="title">Size</h5>
+												<select>
+													<option selected="selected">s</option>
+													<option>m</option>
+													<option>l</option>
+													<option>xl</option>
+												</select>
+											</div>
+											<div class="col-lg-6 col-12">
+												<h5 class="title">Color</h5>
+												<select>
+													<option selected="selected">orange</option>
+													<option>purple</option>
+													<option>black</option>
+													<option>pink</option>
+												</select>
+											</div>
+										</div>
+									</div>
+                                    <div class="quantity">
+										<!-- Input Order -->
+										<div class="input-group">
+											<div class="button minus">
+												<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+													<i class="ti-minus"></i>
+												</button>
+											</div>
+											<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="1000" value="1">
+											<div class="button plus">
+												<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+													<i class="ti-plus"></i>
+												</button>
+											</div>
+										</div>
+										<!--/ End Input Order -->
+									</div>
+									<div class="add-to-cart">
+										<a href="#" class="btn">Add to cart</a>
+										<a href="#" class="btn min"><i class="ti-heart"></i></a>
+										<a href="#" class="btn min"><i class="fa fa-compress"></i></a>
+									</div>
+                                    <div class="default-social">
+										<h4 class="share-now">Share:</h4>
+                                        <ul>
+                                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a class="youtube" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                            <li><a class="dribbble" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
-                <div class="">
-                  <select style="width: 100px;" class="form-select me-4">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                </div>
-                <div class="">
-                  <text class="h6">$44.80</text> <br />
-                  <small class="text-muted text-nowrap"> $12.20 / per item </small>
-                </div>
-              </div>
-              <div class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
-                <div class="float-md-end">
-                  <a href="#!" class="btn btn-light border px-2 icon-hover-primary"><i class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
-                  <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>
-                </div>
-              </div>
             </div>
+        </div>
+        <!-- Modal end -->
+	
+		<div class="container" data-aos="fade-up">
+			<header class="section-header">
+			<h2 style="text-align:center;"><img src="{{asset('landing/images/Logo.png')}}" alt="" width="250px" style="float:center;" />Contact</h2>
+				<!--<h2 class="text-center">About</h2>
+				<img src="{{asset('landing/images/Logo.png')}}" class="img-fluid" alt="" width="300px">-->
+			</header><br><br>
+		</div>	
+			
+		<section class="google-map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15797.457822174392!2d113.7168742!3d-8.1659876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6943505e30a6d%3A0x4a4df80f122d472f!2sFakultas%20Ilmu%20Komputer%20Universitas%20Jember!5e0!3m2!1sid!2sid!4v1682857793467!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</section>		 	
+			<!-- Start Footer Area -->
+			<footer class="footer">
+				<!-- Footer Top -->
+				<div class="footer-top section">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-5 col-md-6 col-12">
+								<!-- Single Widget -->
+								<div class="single-footer about">
+									<div class="logo">
+										<a href="index.html"><img src="{{asset('hygmart/images/Logo.png')}}" alt="" height="50" width="150"></a>
+									</div>
+									<p class="text">Provides everything you need in terms of hydroponics.</p>
+									<p class="text">We are an experienced and skilled team in managing the hydroponic farming business, and we will provide support and guidance in managing your hydroponic farm.</p>
+									<!--<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>-->
+								</div>
+								<!-- End Single Widget -->
+							</div>
+							<div class="col-lg-2 col-md-6 col-12">
+								<!-- Single Widget -->
+								
+								<!-- End Single Widget -->
+							</div>
+							<div class="col-lg-2 col-md-6 col-12">
+								<!-- Single Widget -->
+								<!-- End Single Widget -->
+							</div>
+							<div class="col-lg-3 col-md-6 col-12">
+								<!-- Single Widget -->
+								<div class="single-footer social">
+									<h4> </h4>
+									<!-- Single Widget -->
+									<div class="contact">
+										<ul>
+											<h5 class="text-white">
+												<i class="bi-geo-alt-fill me-2"></i>
+												Jember, Jawa Timur
+												<br>Indonesia
+											</h5>
+											<li>hygrow@gmail.com</li><br>
+										</ul>
+									</div>
+									<!-- End Single Widget -->
+									<ul>
+										<li><a href="#"><i class="ti-facebook"></i></a></li>
+										<li><a href="#"><i class="ti-twitter"></i></a></li>
+										<li><a href="#"><i class="ti-instagram"></i></a></li>
+									</ul>
+								</div>
+								<!-- End Single Widget -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Footer Top -->
+				<div class="copyright">
+					<div class="container">
+						<div class="inner">
+							<div class="row">
+								<div class="col-lg-6 col-12">
+									<div class="left">
+										<p>Copyright© Hygrow 2023 -  All Rights Reserved.</p>
+									</div>
+								</div>
+								<div class="col-lg-6 col-12">
+									<div class="right">
+										<img src="{{Asset('hygmart/images/payments.png')}}" alt="#">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- /End Footer Area -->
+	
+	<!-- Jquery -->
+	
 
-            <div class="row gy-3">
-              <div class="col-lg-5">
-                <div class="me-lg-5">
-                  <div class="d-flex">
-                    <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/13.webp" class="border rounded me-3" style="width: 96px; height: 96px;" />
-                    <div class="">
-                      <a href="#" class="nav-link">Blazer Suit Dress Jacket for Men</a>
-                      <p class="text-muted">XL size, Jeans, Blue</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
-                <div class="">
-                  <select style="width: 100px;" class="form-select me-4">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                  </select>
-                </div>
-                <div class="">
-                  <text class="h6">$1156.00</text> <br />
-                  <small class="text-muted text-nowrap"> $460.00 / per item </small>
-                </div>
-              </div>
-              <div class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
-                <div class="float-md-end">
-                  <a href="#!" class="btn btn-light border px-2 icon-hover-primary"><i class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
-                  <a href="#" class="btn btn-light border text-danger icon-hover-danger"> Remove</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="border-top pt-4 mx-4 mb-4">
-            <p><i class="fas fa-truck text-muted fa-lg"></i> Free Delivery within 1-2 weeks</p>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- cart -->
-      <!-- summary -->
-      <div class="col-lg-3">
-        <div class="card mb-3 border shadow-0">
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label class="form-label">Have coupon?</label>
-                <div class="input-group">
-                  <input type="text" class="form-control border" name="" placeholder="Coupon code" />
-                  <button class="btn btn-light border">Apply</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="card shadow-0 border">
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">Total price:</p>
-              <p class="mb-2">$329.00</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">Discount:</p>
-              <p class="mb-2 text-success">-$60.00</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">TAX:</p>
-              <p class="mb-2">$14.00</p>
-            </div>
-            <hr />
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">Total price:</p>
-              <p class="mb-2 fw-bold">$283.00</p>
-            </div>
-
-            <div class="mt-3">
-              <a href="#" class="btn btn-success w-100 shadow-0 mb-2"> Make Purchase </a>
-              <a href="#" class="btn btn-light w-100 border mt-2"> Back to shop </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- summary -->
-    </div>
-  </div>
-</section>
-<!-- cart + summary -->
-<section>
-  <div class="container my-5">
-    <header class="mb-4">
-      <h3>Recommended items</h3>
-    </header>
-
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card px-4 border shadow-0 mb-4 mb-lg-0">
-          <div class="mask px-2" style="height: 50px;">
-            <div class="d-flex justify-content-between">
-              <h6><span class="badge bg-danger pt-1 mt-3 ms-2">New</span></h6>
-              <a href="#"><i class="fas fa-heart text-primary fa-lg float-end pt-3 m-2"></i></a>
-            </div>
-          </div>
-          <a href="#" class="">
-            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/7.webp" class="card-img-top rounded-2" />
-          </a>
-          <div class="card-body d-flex flex-column pt-3 border-top">
-            <a href="#" class="nav-link">Gaming Headset with Mic</a>
-            <div class="price-wrap mb-2">
-              <strong class="">$18.95</strong>
-              <del class="">$24.99</del>
-            </div>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#" class="btn btn-outline-primary w-100">Add to cart</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card px-4 border shadow-0 mb-4 mb-lg-0">
-          <div class="mask px-2" style="height: 50px;">
-            <a href="#"><i class="fas fa-heart text-primary fa-lg float-end pt-3 m-2"></i></a>
-          </div>
-          <a href="#" class="">
-            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/5.webp" class="card-img-top rounded-2" />
-          </a>
-          <div class="card-body d-flex flex-column pt-3 border-top">
-            <a href="#" class="nav-link">Apple Watch Series 1 Sport </a>
-            <div class="price-wrap mb-2">
-              <strong class="">$120.00</strong>
-            </div>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#" class="btn btn-outline-primary w-100">Add to cart</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card px-4 border shadow-0">
-          <div class="mask px-2" style="height: 50px;">
-            <a href="#"><i class="fas fa-heart text-primary fa-lg float-end pt-3 m-2"></i></a>
-          </div>
-          <a href="#" class="">
-            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/9.webp" class="card-img-top rounded-2" />
-          </a>
-          <div class="card-body d-flex flex-column pt-3 border-top">
-            <a href="#" class="nav-link">Men's Denim Jeans Shorts</a>
-            <div class="price-wrap mb-2">
-              <strong class="">$80.50</strong>
-            </div>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#" class="btn btn-outline-primary w-100">Add to cart</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card px-4 border shadow-0">
-          <div class="mask px-2" style="height: 50px;">
-            <a href="#"><i class="fas fa-heart text-primary fa-lg float-end pt-3 m-2"></i></a>
-          </div>
-          <a href="#" class="">
-            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/10.webp" class="card-img-top rounded-2" />
-          </a>
-          <div class="card-body d-flex flex-column pt-3 border-top">
-            <a href="#" class="nav-link">Mens T-shirt Cotton Base Layer Slim fit </a>
-            <div class="price-wrap mb-2">
-              <strong class="">$13.90</strong>
-            </div>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#" class="btn btn-outline-primary w-100">Add to cart</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Recommended -->
-
-<!-- Footer -->
-<footer class="text-center text-lg-start text-muted bg-primary mt-3">
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start pt-4 pb-4">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-12 col-lg-3 col-sm-12 mb-2">
-          <!-- Content -->
-          <a href="https://mdbootstrap.com/" target="_blank" class="text-white h2">
-            MDB
-          </a>
-          <p class="mt-1 text-white">
-            © 2023 Copyright: MDBootstrap.com
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-6 col-sm-4 col-lg-2">
-          <!-- Links -->
-          <h6 class="text-uppercase text-white fw-bold mb-2">
-            Store
-          </h6>
-          <ul class="list-unstyled mb-4">
-            <li><a class="text-white-50" href="#">About us</a></li>
-            <li><a class="text-white-50" href="#">Find store</a></li>
-            <li><a class="text-white-50" href="#">Categories</a></li>
-            <li><a class="text-white-50" href="#">Blogs</a></li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-6 col-sm-4 col-lg-2">
-          <!-- Links -->
-          <h6 class="text-uppercase text-white fw-bold mb-2">
-            Information
-          </h6>
-          <ul class="list-unstyled mb-4">
-            <li><a class="text-white-50" href="#">Help center</a></li>
-            <li><a class="text-white-50" href="#">Money refund</a></li>
-            <li><a class="text-white-50" href="#">Shipping info</a></li>
-            <li><a class="text-white-50" href="#">Refunds</a></li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-6 col-sm-4 col-lg-2">
-          <!-- Links -->
-          <h6 class="text-uppercase text-white fw-bold mb-2">
-            Support
-          </h6>
-          <ul class="list-unstyled mb-4">
-            <li><a class="text-white-50" href="#">Help center</a></li>
-            <li><a class="text-white-50" href="#">Documents</a></li>
-            <li><a class="text-white-50" href="#">Account restore</a></li>
-            <li><a class="text-white-50" href="#">My orders</a></li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-12 col-sm-12 col-lg-3">
-          <!-- Links -->
-          <h6 class="text-uppercase text-white fw-bold mb-2">Newsletter</h6>
-          <p class="text-white">Stay in touch with latest updates about our products and offers</p>
-          <div class="input-group mb-3">
-            <input type="email" class="form-control border" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" />
-            <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
-              Join
-            </button>
-          </div>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <div class="">
-    <div class="container">
-      <div class="d-flex justify-content-between py-4 border-top">
-        <!--- payment --->
-        <div>
-          <i class="fab fa-lg fa-cc-visa text-white"></i>
-          <i class="fab fa-lg fa-cc-amex text-white"></i>
-          <i class="fab fa-lg fa-cc-mastercard text-white"></i>
-          <i class="fab fa-lg fa-cc-paypal text-white"></i>
-        </div>
-        <!--- payment --->
-
-        <!--- language selector --->
-        <div class="dropdown dropup">
-          <a class="dropdown-toggle text-white" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
-
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
-            </li>
-          </ul>
-        </div>
-        <!--- language selector --->
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- Footer -->
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="{{asset('hygmart/js/jquery.min.js')}}"></script>
+    <script src="{{asset('hygmart/js/jquery-migrate-3.0.0.js')}}"></script>
+	<script src="{{asset('hygmart/js/jquery-ui.min.js')}}"></script>
+	<!-- Popper JS -->
+	<script src="{{asset('hygmart/js/popper.min.js')}}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{{asset('hygmart/js/bootstrap.min.js')}}"></script>
+	<!-- Color JS -->
+	<script src="{{asset('hygmart/js/colors.js')}}"></script>
+	<!-- Slicknav JS -->
+	<script src="{{asset('hygmart/js/slicknav.min.js')}}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{{asset('hygmart/js/owl-carousel.js')}}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{{asset('hygmart/js/magnific-popup.js')}}"></script>
+	<!-- Fancybox JS -->
+	<script src="{{asset('hygmart/js/facnybox.min.js')}}"></script>
+	<!-- Waypoints JS -->
+	<script src="{{asset('hygmart/js/waypoints.min.js')}}"></script>
+	<!-- Countdown JS -->
+	<script src="{{asset('hygmart/js/finalcountdown.min.js')}}"></script>
+	<!-- Nice Select JS -->
+	<script src="{{asset('hygmart/js/nicesellect.js')}}"></script>
+	<!-- Ytplayer JS -->
+	<script src="{{asset('hygmart/js/ytplayer.min.js')}}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{{asset('hygmart/js/flex-slider.js')}}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{{asset('hygmart/js/scrollup.js')}}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{{asset('hygmart/js/onepage-nav.min.js')}}"></script>
+	<!-- Easing JS -->
+	<script src="{{asset('hygmart/js/easing.js')}}"></script>
+	<!-- Active JS -->
+	<script src="{{asset('hygmart/js/active.js')}}"></script>
 </body>
 </html>
-

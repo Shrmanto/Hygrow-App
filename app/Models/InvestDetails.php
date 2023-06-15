@@ -11,5 +11,11 @@ class InvestDetails extends Model
     use HasFactory, HasRoles;
     protected $table = 'invest_details';
     protected $primaryKey = 'id';
+    protected $fillable = [
+        'investation_id', 
+        'user_id',
+        'status_payment',
+        'status_wd'
+    ];
 }
  

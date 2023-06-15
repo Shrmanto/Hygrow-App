@@ -109,7 +109,7 @@ class ComplaintsController extends Controller
             $row[] = $list->name;
             $row[] = $list->email;
             $row[] = $list->isi;
-            // $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData(' . $list->id . ')"><i class="fa fa-trash"></i></a>';
+            $row[] =  '<a href="javascript:void(0)" class="btn btn-danger btn-sm" onclick="deleteData(' . $list->id . ')"><i class="fa fa-trash"></i></a>';
             '';
 
             $data[] = $row;

@@ -78,7 +78,7 @@
           </div>
           <ul class="navbar-nav flex-fill w-100 mb-2">
             <li class="nav-item w-100">
-              <a class="nav-link" href="{{route('Admhome')}}">
+              <a class="nav-link" href="{{route('dashboard')}}">
                 <i class="fe fe-home fe-16"></i>
                 <span class="ml-3 item-text">Dashboard</span>
               </a>
@@ -115,18 +115,18 @@
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a href="#tables" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <a href="#tables1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
                 <i class="fe fe-trending-up fe-16"></i>
                 <span class="ml-3 item-text">e-Commerce</span>
               </a>
-              <ul class="collapse list-unstyled pl-4 w-100" id="tables">
+              <ul class="collapse list-unstyled pl-4 w-100" id="tables1">
                 <li class="nav-item">
                   <a class="nav-link pl-3" href="{{route('product.index')}}">
                   <span class="ml-1 item-text">Product</span>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Customer Orders</span></a>
+                  <a class="nav-link pl-3" href="{{route('orderc.data')}}"><span class="ml-1 item-text">Customer Orders</span></a>
                 </li>
               </ul>
             <li class="nav-item dropdown">
@@ -141,7 +141,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link pl-3" href="./table_advanced.html"><span class="ml-1 item-text">Customer Invest</span></a>
+                  <a class="nav-link pl-3" href="{{route('investc.data')}}"><span class="ml-1 item-text">Customer Invest</span></a>
                 </li>
               </ul>
             </nav>

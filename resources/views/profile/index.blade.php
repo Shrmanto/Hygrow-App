@@ -2,7 +2,7 @@
     @section('content')
         <div class="row">
             <div class="col-lg-12 mb-3">
-                <a href="javascript:void(0)" class="btn btn-warning" onclick="editProfile()"><i class="fas fa-pencil-alt"></i> Ubah Profil</a>
+                <a href="javascript:void(0)" class="btn btn-warning" onclick="editProfile()"><i class="fas fa-pencil-alt"></i> Ubah Data</a>
             </div>
         </div>
         <div class="row">

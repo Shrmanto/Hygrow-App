@@ -1,575 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/style.css" />
+	<!-- Meta Tag -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='copyright' content=''>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Title Tag  -->
+    <title>HyGMart</title>
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="{{asset('hygmart/images/logo.png')}}">
+	<!-- Web Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+	
+	<!-- StyleSheet -->
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{{asset('hygmart/css/bootstrap.css')}}">
+	<!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/magnific-popup.min.css')}}">
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/font-awesome.css')}}">
+	<!-- Fancybox -->
+	<link rel="stylesheet" href="{{asset('hygmart/css/jquery.fancybox.min.css')}}">
+	<!-- Themify Icons -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/themify-icons.css')}}">
+	<!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/niceselect.css')}}">
+	<!-- Animate CSS -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/animate.css')}}">
+	<!-- Flex Slider CSS -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/flex-slider.min.css')}}">
+	<!-- Owl Carousel -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/owl-carousel.css')}}">
+	<!-- Slicknav -->
+    <link rel="stylesheet" href="{{asset('hygmart/css/slicknav.min.css')}}">
+	
+	<!-- Eshop StyleSheet -->
+	<link rel="stylesheet" href="{{asset('hygmart/css/reset.css')}}">
+	<link rel="stylesheet" href="{{asset('hygmart/style.css')}}">
+    <link rel="stylesheet" href="{{asset('hygmart/css/responsive.css')}}">
+
+	
+	
 </head>
-<body>
-    <!--Main Navigation-->
-<header>
-  <!-- Jumbotron -->
-  <div class="p-3 text-center bg-white border-bottom">
-    <div class="container">
-      <div class="row gy-3">
-        <!-- Left elements -->
-        <div class="col-lg-2 col-sm-4 col-4">
-          <a href="https://mdbootstrap.com/" target="_blank" class="float-start">
-            <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
-          </a>
-        </div>
-        <!-- Left elements -->
+<body class="js">
+	
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+	
+	
+	<!-- Header -->
+	<header class="header shop">
+					<div class="col-lg-8 col-md-12 col-12">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Topbar -->
+		<div class="middle-inner">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-12">
+						<!-- Logo -->
+						<div class="logo">
+							<a href="index.html"><img src="{{asset('hygmart/images/logo.png')}}"  alt="" height="80" width="165" ></a>
+						</div>
+						<!--/ End Logo -->
+						<!-- Search Form -->
+						<div class="search-top">
+							<div class="top-search"><a href="#0"><i class="ti-search"></i></a></div>
+							<!-- Search Form -->
+							<div class="search-top">
+								<form class="search-form">
+									<input type="text" placeholder="Search here..." name="search">
+									<button value="search" type="submit"><i class="ti-search"></i></button>
+								</form>
+							</div>
+							<!--/ End Search Form -->
+						</div>
+						<!--/ End Search Form -->
+						<div class="mobile-nav"></div>
+					</div>
+					<div class="col-lg-8 col-md-7 col-12">
+						<div class="search-bar-top">
+							<div class="search-bar">
+								<form>
+									<input name="search" placeholder="Search Products Here....." type="search">
+									<button class="btnn"><i class="ti-search"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-3 col-12">
+						<div class="right-bar">
+							<!-- Search Form -->
+							<div class="sinlge-bar">
+								<a href="/wishlist" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+							</div>
+							<div class="sinlge-bar">
+								<a href="{{ route('user.index')}}" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+							</div>
+							<div class="sinlge-bar shopping">
+								<a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+								<!-- Shopping Item -->
+								<div class="shopping-item">
+									<div class="dropdown-cart-header">
+										<a href="/showcart">View Cart</a>
+									</div>
+									<ul class="shopping-list">
+										@foreach ($getCart as $item)
+										<li>
+											<a href="#" class="remove" title="Remove this item"><i class="fa fa-remove"></i></a>
+											<a class="cart-img" href="#"><img src="{{asset($item->images)}}" alt="#"></a>
+											<h4><a href="#">{{$item->product_name}}</a></h4>
+											<p class="quantity">1x - <span class="amount">@currency($item->price)</span></p>
+										</li>
+										@endforeach
+									</ul>
+									
+								</div>
+								<!--/ End Shopping Item -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="cat-nav-head">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="all-category">
+								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>HyGMart</h3>
+									</li>
+							</div>
+						</div>
+						<div class="col-lg-9 col-12">
+							<div class="menu-area">
+								<!-- Main Menu -->
+								<nav class="navbar navbar-expand-lg">
+									<div class="navbar-collapse">	
+										<div class="nav-inner">	
+											<ul class="nav main-menu menu navbar-nav">
+													<li class="active"><a href="{{ route('custmain')}}">Home</a></li>											
+													<li><a href="hygrovest">HyGrovest</a></li>
+													<!--<li><a href="#">Shop<i class="ti-angle-down"></i><span class="new">New</span></a>
+														<ul class="dropdown">
+															<li><a href="shop-grid.html">Shop Grid</a></li>
+															<li><a href="cart.html">Cart</a></li>
+															<li><a href="checkout.html">Checkout</a></li>
+														</ul>
+													</li>-->
+													<li><a href="contact.html">Contact Us</a></li>
+												</ul>
+										</div>
+									</div>
+								</nav>
+								<!--/ End Main Menu -->	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!--/ End Header -->
+	
+	<!-- Slider Area -->
+	<section class="hero-slider">
+						
+		
+		<!--/ End Single Slider -->
+	</section>
+	<!--/ End Slider Area -->
 
-        <!-- Center elements -->
-        <div class="order-lg-last col-lg-5 col-sm-8 col-8">
-          <div class="d-flex float-end">
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-user-alt m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Sign in</p> </a>
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="me-1 border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-heart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">Wishlist</p> </a>
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="border rounded py-1 px-3 nav-link d-flex align-items-center" target="_blank"> <i class="fas fa-shopping-cart m-1 me-md-2"></i><p class="d-none d-md-block mb-0">My cart</p> </a>
-          </div>
-        </div>
-        <!-- Center elements -->
+	</section>
+	<!-- End Small Banner -->
+	
+	<!-- Start Product Area -->
+    <div class="product-area section">
+            <div class="container">
+				@if(session()->has('success'))
+					<div class="alert alert-success">
+						{{ session()->get('success') }}
+					</div>
+				@endif
+				<div class="row">
+					<div class="col-12">
+						<div class="section-title">
+							<h2>Hygrow Item</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="product-info">
+							<div class="tab-content" id="myTabContent">
+								<!-- Start Single Tab -->
+								<div class="tab-pane fade show active" id="man" role="tabpanel">
+									<div class="tab-single">
+										<div class="row">
+											
+											@foreach ($getProducts as $item)
+											<div class="col-xl-3 col-lg-4 col-md-4 col-12">
+												<form action="{{url('/cart/'.$item->id.'')}}" method="POST" enctype="multipart/form-data">
+													@csrf
+													@method('put')
+													<div class="single-product">
+														<div class="product-img">
+															<a href="product-details.html">
+																<img class="default-img" src="{{asset($item->images)}}" alt="#">
+															</a>
+															<div class="button-head">
+																<div class="product-action">
+																	<a data-toggle="modal" data-target="#exampleModal{{$item->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																	<a data-toggle="modal" data-target="#exampleModal" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
+																</div>
+																<div class="product-action-2">
+																	<button class="btn btn-success" title="Add to cart" type="submit">Make an Order</button>
+																	<input type="number" name="total_order" class="ml-2 col-2">
+																	<input type="hidden" name="price" value="{{$item->price}}" class="ml-2 col-2">
+																</div>
+															</div>
+														</div>
+														<div class="product-content">
+															<h3><a href="product-details.html">{{$item->product_name}}</a></h3>
+															<div class="product-price d-flex">
+																<span >@currency($item->price)</span>
+															</div>
+														</div>
+													</div>
+												</form>
 
-        <!-- Right elements -->
-        <div class="col-lg-5 col-md-12 col-12">
-          <div class="input-group float-center">
-            <div class="form-outline">
-              <input type="search" id="form1" class="form-control" />
-              <label class="form-label" for="form1">Search</label>
-            </div>
-            <button type="button" class="btn btn-primary shadow-0">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </div>
-        <!-- Right elements -->
-      </div>
+											</div>
+											@endforeach
+											
+											
+										</div>
+									</div>
+								</div>
+
     </div>
-  </div>
-  <!-- Jumbotron -->
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <!-- Container wrapper -->
-    <div class="container justify-content-center justify-content-md-between">
-      <!-- Toggle button -->
-      <button
-              class="navbar-toggler border py-2 text-dark"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#navbarLeftAlignExample"
-              aria-controls="navbarLeftAlignExample"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              >
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse" id="navbarLeftAlignExample">
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-dark" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Categories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Hot offers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Gift boxes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Projects</a>
-          </li>
-          <li class="nav-item"></li>
-            <a class="nav-link text-dark" href="#">Item</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Menu name</a>
-          </li>
-          <!-- Navbar dropdown -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              Others
-            </a>
-            <!-- Dropdown menu -->
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a class="dropdown-item" href="#">Action</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">Another action</a>
-              </li>
-              <li><hr class="dropdown-divider" /></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <!-- Left links -->
-      </div>
+	
+	<!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ti-close" aria-hidden="true"></span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row no-gutters">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <!-- Product Slider -->
+									<div class="product-gallery">
+										<div class="quickview-slider-active">
+											<div class="single-slider">
+												<img src="https://via.placeholder.com/569x528" alt="#">
+											</div>
+											<div class="single-slider">
+												<img src="https://via.placeholder.com/569x528" alt="#">
+											</div>
+											<div class="single-slider">
+												<img src="https://via.placeholder.com/569x528" alt="#">
+											</div>
+											<div class="single-slider">
+												<img src="https://via.placeholder.com/569x528" alt="#">
+											</div>
+										</div>
+									</div>
+								<!-- End Product slider -->
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="quickview-content">
+                                    <h2>Flared Shift Dress</h2>
+                                    <div class="quickview-ratting-review">
+                                        <div class="quickview-ratting-wrap">
+                                            <div class="quickview-ratting">
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="yellow fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </div>
+                                            <a href="#"> (1 customer review)</a>
+                                        </div>
+                                        <div class="quickview-stock">
+                                            <span><i class="fa fa-check-circle-o"></i> in stock</span>
+                                        </div>
+                                    </div>
+                                    <h3>$29.00</h3>
+                                    <div class="quickview-peragraph">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
+                                    </div>
+									<div class="size">
+										<div class="row">
+											<div class="col-lg-6 col-12">
+												<h5 class="title">Size</h5>
+												<select>
+													<option selected="selected">s</option>
+													<option>m</option>
+													<option>l</option>
+													<option>xl</option>
+												</select>
+											</div>
+											<div class="col-lg-6 col-12">
+												<h5 class="title">Color</h5>
+												<select>
+													<option selected="selected">orange</option>
+													<option>purple</option>
+													<option>black</option>
+													<option>pink</option>
+												</select>
+											</div>
+										</div>
+									</div>
+                                    <div class="quantity">
+										<!-- Input Order -->
+										<div class="input-group">
+											<div class="button minus">
+												<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+													<i class="ti-minus"></i>
+												</button>
+											</div>
+											<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="1000" value="1">
+											<div class="button plus">
+												<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+													<i class="ti-plus"></i>
+												</button>
+											</div>
+										</div>
+										<!--/ End Input Order -->
+									</div>
+									<div class="add-to-cart">
+										<a href="#" class="btn">Add to cart</a>
+										<a href="#" class="btn min"><i class="ti-heart"></i></a>
+										<a href="#" class="btn min"><i class="fa fa-compress"></i></a>
+									</div>
+                                    <div class="default-social">
+										<h4 class="share-now">Share:</h4>
+                                        <ul>
+                                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a class="youtube" href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                            <li><a class="dribbble" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
-    <!-- Container wrapper -->
-  </nav>
-  <!-- Navbar -->
-  <!-- Jumbotron -->
-  <div class="bg-primary text-white py-5">
-    <div class="container py-5">
-      <h1>
-        Best products & <br />
-        brands in our store
-      </h1>
-      <p>
-        Trendy Products, Factory Prices, Excellent Service
-      </p>
-      <button type="button" class="btn btn-outline-light">
-        Learn more
-      </button>
-      <button type="button" class="btn btn-light shadow-0 text-primary pt-2 border border-white">
-        <span class="pt-1">Purchase now</span>
-      </button>
-    </div>
-  </div>
-  <!-- Jumbotron -->
-</header>
-<!-- Products -->
-<section>
-  <div class="container my-5">
-    <header class="mb-4">
-      <h3>New products</h3>
-    </header>
+    <!-- Modal end -->
+	
+	</section>
+			<div class="container" data-aos="fade-up">
+				<header class="section-header">
+				<h2 style="text-align:center;"><img src="{{asset('landing/images/Logo.png')}}" alt="" width="250px" style="float:center;" />Contact</h2>
+					<!--<h2 class="text-center">About</h2>
+					<img src="{{asset('landing/images/Logo.png')}}" class="img-fluid" alt="" width="300px">-->
+				</header><br><br>
+			</div>	
+	<section class="google-map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15797.457822174392!2d113.7168742!3d-8.1659876!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6943505e30a6d%3A0x4a4df80f122d472f!2sFakultas%20Ilmu%20Komputer%20Universitas%20Jember!5e0!3m2!1sid!2sid!4v1682857793467!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>		 	
+	<!-- Start Footer Area -->
+	<footer class="footer">
+		<!-- Footer Top -->
+		<div class="footer-top section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer about">
+							<div class="logo">
+								<a href="index.html"><img src="{{asset('hygmart/images/Logo.png')}}" alt="" height="50" width="150"></a>
+							</div>
+							<p class="text">Provides everything you need in terms of hydroponics.</p>
+							<p class="text">We are an experienced and skilled team in managing the hydroponic farming business, and we will provide support and guidance in managing your hydroponic farm.</p>
+							<!--<p class="call">Got Question? Call us 24/7<span><a href="tel:123456789">+0123 456 789</a></span></p>-->
+						</div>
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-2 col-md-6 col-12">
+						<!-- Single Widget -->
+						<!-- End Single Widget -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Single Widget -->
+						<div class="single-footer social">
+							<h4> </h4>
+							<!-- Single Widget -->
+							<div class="contact">
+								<ul>
+									<h5 class="text-white">
+										<i class="bi-geo-alt-fill me-2"></i>
+										Jember, Jawa Timur
+										<br>Indonesia
+									</h5>
+									<li>hygrow@gmail.com</li><br>
+								</ul>
+							</div>
+							<!-- End Single Widget -->
+							<ul>
+								<li><a href="#"><i class="ti-facebook"></i></a></li>
+								<li><a href="#"><i class="ti-twitter"></i></a></li>
+								<li><a href="#"><i class="ti-instagram"></i></a></li>
+							</ul>
+						</div>
+						<!-- End Single Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Top -->
+		<div class="copyright">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+						<div class="col-lg-6 col-12">
+							<div class="left">
+								<p>Copyright© Hygrow 2023 -  All Rights Reserved.</p>
+							</div>
+						</div>
+						<div class="col-lg-6 col-12">
+							<div class="right">
+								<img src="{{Asset('hygmart/images/payments.png')}}" alt="#">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- /End Footer Area -->
 
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">GoPro HERO6 4K Action Camera - Black</h5>
-            <p class="card-text">$790.50</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/2.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Canon camera 20x zoom, Black color EOS 2000</h5>
-            <p class="card-text">$320.00</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/3.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Xiaomi Redmi 8 Original Global Version 4GB</h5>
-            <p class="card-text">$120.00</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/4.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Apple iPhone 12 Pro 6.1" RAM 6GB 512GB Unlocked</h5>
-            <p class="card-text">$120.00</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/5.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Apple Watch Series 1 Sport Case 38mm Black</h5>
-            <p class="card-text">$790.50</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/6.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">T-shirts with multiple colors, for men and lady</h5>
-            <p class="card-text">$120.00</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/7.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Gaming Headset 32db Blackbuilt in mic</h5>
-            <p class="card-text">$99.50</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border icon-hover px-2 pt-2"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100 my-2 shadow-2-strong">
-          <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/8.webp" class="card-img-top" style="aspect-ratio: 1 / 1" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">T-shirts with multiple colors, for men and lady</h5>
-            <p class="card-text">$120.00</p>
-            <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-              <a href="#!" class="btn btn-primary shadow-0 me-1">Add to cart</a>
-              <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Products -->
-
-<!-- Feature -->
-<section class="mt-5" style="background-color: #f5f5f5;">
-  <div class="container text-dark pt-3">
-    <header class="pt-4 pb-3">
-      <h3>Why choose us</h3>
-    </header>
-
-    <div class="row mb-4">
-      <div class="col-lg-4 col-md-6">
-        <figure class="d-flex align-items-center mb-4">
-          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-            <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
-          </span>
-          <figcaption class="info">
-            <h6 class="title">Reasonable prices</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-          </figcaption>
-        </figure>
-        <!-- itemside // -->
-      </div>
-      <!-- col // -->
-      <div class="col-lg-4 col-md-6">
-        <figure class="d-flex align-items-center mb-4">
-          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-            <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
-          </span>
-          <figcaption class="info">
-            <h6 class="title">Best quality</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-          </figcaption>
-        </figure>
-        <!-- itemside // -->
-      </div>
-      <!-- col // -->
-      <div class="col-lg-4 col-md-6">
-        <figure class="d-flex align-items-center mb-4">
-          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-            <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
-          </span>
-          <figcaption class="info">
-            <h6 class="title">Worldwide shipping</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-          </figcaption>
-        </figure>
-        <!-- itemside // -->
-      </div>
-      <!-- col // -->
-      <div class="col-lg-4 col-md-6">
-        <figure class="d-flex align-items-center mb-4">
-          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-            <i class="fas fa-users fa-2x fa-fw text-primary floating"></i>
-          </span>
-          <figcaption class="info">
-            <h6 class="title">Customer satisfaction</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-          </figcaption>
-        </figure>
-        <!-- itemside // -->
-      </div>
-      <!-- col // -->
-      <div class="col-lg-4 col-md-6">
-        <figure class="d-flex align-items-center mb-4">
-          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-            <i class="fas fa-thumbs-up fa-2x fa-fw text-primary floating"></i>
-          </span>
-          <figcaption class="info">
-            <h6 class="title">Happy customers</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-          </figcaption>
-        </figure>
-        <!-- itemside // -->
-      </div>
-      <!-- col // -->
-      <div class="col-lg-4 col-md-6">
-        <figure class="d-flex align-items-center mb-4">
-          <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-            <i class="fas fa-box fa-2x fa-fw text-primary floating"></i>
-          </span>
-          <figcaption class="info">
-            <h6 class="title">Thousand items</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-          </figcaption>
-        </figure>
-        <!-- itemside // -->
-      </div>
-      <!-- col // -->
-    </div>
-  </div>
-  <!-- container end.// -->
-</section>
-<!-- Feature -->
-
-<!-- Blog -->
-<section class="mt-5 mb-4">
-  <div class="container text-dark">
-    <header class="mb-4">
-      <h3>Blog posts</h3>
-    </header>
-
-    <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <article>
-          <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/1.webp" style="object-fit: cover;" height="160" />
-          </a>
-          <div class="mt-2 text-muted small d-block mb-1">
-            <span>
-              <i class="fa fa-calendar-alt fa-sm"></i>
-              23.12.2022
-            </span>
-            <a href="#"><h6 class="text-dark">How to promote brands</h6></a>
-            <p>When you enter into any new area of science, you almost reach</p>
-          </div>
-        </article>
-      </div>
-      <!-- col.// -->
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <article>
-          <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/2.webp" style="object-fit: cover;" height="160" />
-          </a>
-          <div class="mt-2 text-muted small d-block mb-1">
-            <span>
-              <i class="fa fa-calendar-alt fa-sm"></i>
-              13.12.2022
-            </span>
-            <a href="#"><h6 class="text-dark">How we handle shipping</h6></a>
-            <p>When you enter into any new area of science, you almost reach</p>
-          </div>
-        </article>
-      </div>
-      <!-- col.// -->
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <article>
-          <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/3.webp" style="object-fit: cover;" height="160" />
-          </a>
-          <div class="mt-2 text-muted small d-block mb-1">
-            <span>
-              <i class="fa fa-calendar-alt fa-sm"></i>
-              25.11.2022
-            </span>
-            <a href="#"><h6 class="text-dark">How to promote brands</h6></a>
-            <p>When you enter into any new area of science, you almost reach</p>
-          </div>
-        </article>
-      </div>
-      <!-- col.// -->
-      <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-        <article>
-          <a href="#" class="img-fluid">
-            <img class="rounded w-100" src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/posts/4.webp" style="object-fit: cover;" height="160" />
-          </a>
-          <div class="mt-2 text-muted small d-block mb-1">
-            <span>
-              <i class="fa fa-calendar-alt fa-sm"></i>
-              03.09.2022
-            </span>
-            <a href="#"><h6 class="text-dark">Success story of sellers</h6></a>
-            <p>When you enter into any new area of science, you almost reach</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Blog -->
-
-<!-- Footer -->
-<footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start pt-4 pb-4">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-12 col-lg-3 col-sm-12 mb-2">
-          <!-- Content -->
-          <a href="https://mdbootstrap.com/" target="_blank" class="">
-            <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="35" />
-          </a>
-          <p class="mt-2 text-dark">
-            © 2023 Copyright: MDBootstrap.com
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-6 col-sm-4 col-lg-2">
-          <!-- Links -->
-          <h6 class="text-uppercase text-dark fw-bold mb-2">
-            Store
-          </h6>
-          <ul class="list-unstyled mb-4">
-            <li><a class="text-muted" href="#">About us</a></li>
-            <li><a class="text-muted" href="#">Find store</a></li>
-            <li><a class="text-muted" href="#">Categories</a></li>
-            <li><a class="text-muted" href="#">Blogs</a></li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-6 col-sm-4 col-lg-2">
-          <!-- Links -->
-          <h6 class="text-uppercase text-dark fw-bold mb-2">
-            Information
-          </h6>
-          <ul class="list-unstyled mb-4">
-            <li><a class="text-muted" href="#">Help center</a></li>
-            <li><a class="text-muted" href="#">Money refund</a></li>
-            <li><a class="text-muted" href="#">Shipping info</a></li>
-            <li><a class="text-muted" href="#">Refunds</a></li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-6 col-sm-4 col-lg-2">
-          <!-- Links -->
-          <h6 class="text-uppercase text-dark fw-bold mb-2">
-            Support
-          </h6>
-          <ul class="list-unstyled mb-4">
-            <li><a class="text-muted" href="#">Help center</a></li>
-            <li><a class="text-muted" href="#">Documents</a></li>
-            <li><a class="text-muted" href="#">Account restore</a></li>
-            <li><a class="text-muted" href="#">My orders</a></li>
-          </ul>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-12 col-sm-12 col-lg-3">
-          <!-- Links -->
-          <h6 class="text-uppercase text-dark fw-bold mb-2">Newsletter</h6>
-          <p class="text-muted">Stay in touch with latest updates about our products and offers</p>
-          <div class="input-group mb-3">
-            <input type="email" class="form-control border" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" />
-            <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
-              Join
-            </button>
-          </div>
-        </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </div>
-  </section>
-  <!-- Section: Links  -->
-
-  <div class="">
-    <div class="container">
-      <div class="d-flex justify-content-between py-4 border-top">
-        <!--- payment --->
-        <div>
-          <i class="fab fa-lg fa-cc-visa text-dark"></i>
-          <i class="fab fa-lg fa-cc-amex text-dark"></i>
-          <i class="fab fa-lg fa-cc-mastercard text-dark"></i>
-          <i class="fab fa-lg fa-cc-paypal text-dark"></i>
-        </div>
-        <!--- payment --->
-
-        <!--- language selector --->
-        <div class="dropdown dropup">
-          <a class="dropdown-toggle text-dark" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-united-kingdom flag m-0 me-1"></i>English </a>
-
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English <i class="fa fa-check text-success ms-2"></i></a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
-            </li>
-          </ul>
-        </div>
-        <!--- language selector --->
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- Footer -->
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
+ 
+	<!-- Jquery -->
+    <script src="{{asset('hygmart/js/jquery.min.js')}}"></script>
+    <script src="{{asset('hygmart/js/jquery-migrate-3.0.0.js')}}"></script>
+	<script src="{{asset('hygmart/js/jquery-ui.min.js')}}"></script>
+	<!-- Popper JS -->
+	<script src="{{asset('hygmart/js/popper.min.js')}}"></script>
+	<!-- Bootstrap JS -->
+	<script src="{{asset('hygmart/js/bootstrap.min.js')}}"></script>
+	<!-- Color JS -->
+	<script src="{{asset('hygmart/js/colors.js')}}"></script>
+	<!-- Slicknav JS -->
+	<script src="{{asset('hygmart/js/slicknav.min.js')}}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{{asset('hygmart/js/owl-carousel.js')}}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{{asset('hygmart/js/magnific-popup.js')}}"></script>
+	<!-- Waypoints JS -->
+	<script src="{{asset('hygmart/js/waypoints.min.js')}}"></script>
+	<!-- Countdown JS -->
+	<script src="{{asset('hygmart/js/finalcountdown.min.js')}}"></script>
+	<!-- Nice Select JS -->
+	<script src="{{asset('hygmart/js/nicesellect.js')}}"></script>
+	<!-- Flex Slider JS -->
+	<script src="{{asset('hygmart/js/flex-slider.js')}}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{{asset('hygmart/js/scrollup.js')}}"></script>
+	<!-- Onepage Nav JS -->
+	<script src="{{asset('hygmart/js/onepage-nav.min.js')}}"></script>
+	<!-- Easing JS -->
+	<script src="{{asset('hygmart/js/easing.js')}}"></script>
+	<!-- Active JS -->
+	<script src="{{asset('hygmart/js/active.js')}}"></script>
 </body>
 </html>
-
